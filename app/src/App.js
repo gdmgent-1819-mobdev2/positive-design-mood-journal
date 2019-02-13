@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 /* Data & logic */
 import {
-  initFirebase, listenToFirebaseRef, postToFirebaseRef, deleteInFirebaseRef,
+  initFirebase,
+  listenToFirebaseRef,
+  postToFirebaseRef,
+  deleteInFirebaseRef
 } from './service/firebase';
 import generateUniqueId from './utils/uuid';
 
@@ -12,6 +15,7 @@ import logo from './assets/logo.svg';
 import Header from './components/Header';
 import SafeEmoji from './components/SafeEmoji';
 import Clock from './components/Clock';
+import MoodSlider from './components/MoodSlider';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +23,7 @@ class App extends Component {
     this.state = {
       votes: null,
       loading: true,
-      id: generateUniqueId(),
+      id: generateUniqueId()
     };
   }
 
@@ -28,11 +32,11 @@ class App extends Component {
    */
   async componentDidMount() {
     initFirebase();
-    listenToFirebaseRef('votes', (votes) => {
+    listenToFirebaseRef('votes', votes => {
       console.log('Votes in reference:', votes);
       this.setState({
         votes,
-        loading: false,
+        loading: false
       });
     });
   }
@@ -60,35 +64,37 @@ class App extends Component {
    */
   onHandleVote = async () => {
     if (this.hasVoted) {
-      const [firebaseKey] = Object.entries(this.state.votes)
-        .find(([_, id]) => id === this.state.id);
+      const [firebaseKey] = Object.entries(this.state.votes).find(
+        ([_, id]) => id === this.state.id
+      );
       return deleteInFirebaseRef(`votes/${firebaseKey}`);
     }
 
     return postToFirebaseRef('votes', this.state.id);
-  }
+  };
 
   render() {
     return (
       <div className="App">
-        <Header logo={logo} title="⚛️ 👖 In The Pocket: React + Firebase workshop starter" />
+        <Header
+          logo={logo}
+          title="⚛️ 👖 In The Pocket: React + Firebase workshop starter"
+        />
         <div className="App-intro">
           <Clock />
-          {this.state.loading
-            ? (
-              <p>
-                <SafeEmoji emoji="🤔 " label="Thinking" />
-                Getting votes from firebase…
-              </p>
-            )
-            : (
-              <p>{`There are ${this.totalVotes} votes!`}</p>
-            )
-          }
+          {this.state.loading ? (
+            <p>
+              <SafeEmoji emoji="🤔 " label="Thinking" />
+              Getting votes from firebase…
+            </p>
+          ) : (
+            <p>{`There are ${this.totalVotes} votes!`}</p>
+          )}
           <button onClick={this.onHandleVote} type="button">
             {this.hasVoted ? '🙅‍♀️ Unvote' : '✍️ Vote'}
           </button>
         </div>
+        <MoodSlider />
       </div>
     );
   }
