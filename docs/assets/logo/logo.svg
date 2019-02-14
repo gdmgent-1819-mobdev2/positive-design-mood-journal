@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="215" height="189" viewBox="0 0 215 189">
-  <defs>
-    <clipPath id="clip-Artboard_1">
-      <rect width="215" height="189"/>
-    </clipPath>
-  </defs>
-  <g id="Artboard_1" data-name="Artboard – 1" clip-path="url(#clip-Artboard_1)">
-    <rect width="215" height="189" fill="#fff"/>
-    <g id="Symbol_1_2" data-name="Symbol 1 – 2" transform="translate(-44 -119)">
-      <text id="MOODIARY" transform="translate(60 219)" fill="#23e389" font-size="31" font-family="Montserrat-Black, Montserrat" font-weight="800"><tspan x="0" y="0">MOODIARY</tspan></text>
-      <path id="Path_1" data-name="Path 1" d="M-959.241,290s19.07,19.551,42.6,0" transform="translate(1054.622 -60.564)" fill="none" stroke="#23e389" stroke-linecap="round" stroke-width="6"/>
-    </g>
-  </g>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><title>logo</title><path d="M222.19-.08V86.07H370V280.78C370,355,330.75,413.15,246.7,413.15c-82.8,0-123.43-42.18-124-125.15H123V252H32v34.38h-.32c0,138.68,89.65,213.62,215,213.62,135.18,0,215.72-92.45,215.72-219.22V-.08Z"/><polygon points="77.55 81 32.45 179.27 123 179.27 77.55 81"/><path d="M462.78,281c0,126.87-80.61,219.4-215.9,219.4-125.48,0-215.2-75-215.2-213.8h91.13c0,84.12,40.66,126.88,124.07,126.88,84.12,0,123.38-58.18,123.38-132.48V86.14H222.35V-.08H462.78Z"/></svg>
