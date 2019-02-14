@@ -149,7 +149,7 @@ button.download{
     color: 23E3AD;
 }
 
-button.download:nth-child(2){
+button.download:nth-child(1){
     float: right;
     margin: 0 10% 0 0;
 }
