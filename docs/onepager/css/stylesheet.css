@@ -134,10 +134,19 @@ button.download{
     height: 40px;
     width: 150px;
     background-color: black;
-    color: white;
+    color: #23E3AD;
     float: left;
     margin: 0 0 0 10%;
     border-radius: 20px;
+    font-size: 1em;
+    font-weight: 800;
+    border: none;
+}
+
+.text-div-align-center button.download{
+    margin: 0 10% 0 0;
+    background-color: white;
+    color: 23E3AD;
 }
 
 button.download:nth-child(2){
