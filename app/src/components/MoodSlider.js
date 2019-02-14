@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class MoodSlider extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       value: 5,
       slideRange: 10,
