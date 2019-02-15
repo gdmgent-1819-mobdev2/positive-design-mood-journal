@@ -32,7 +32,7 @@ h2{
 }
 
 .main-nav a{
-    float:left;
+    float:right;
 }
 
 .main-nav a .logo{
@@ -45,6 +45,9 @@ h2{
     margin-right: 50px;
 }
 
+a.nav-a-left{
+    float: left;
+}
 
 .background-container{
     position: absolute;
@@ -130,26 +133,30 @@ footer h1{
     margin-top: 80px;
 }
 
-button.download{
+a.download{
     height: 40px;
     width: 150px;
-    background-color: black;
+    background-color: rgba(0,0,0,0);
     color: #23E3AD;
     float: left;
     margin: 0 0 0 10%;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 1em;
     font-weight: 800;
     border: none;
 }
 
-.text-div-align-center button.download{
-    margin: 0 10% 0 0;
-    background-color: white;
-    color: 23E3AD;
+a.download img{
+    max-width: 100%;
 }
 
-button.download:nth-child(1){
+.text-div-align-center a.download{
+    margin: 0 10% 0 0;
+    background-color: rgba(0,0,0,0);
+    color: #23E3AD;
+}
+
+a.download:nth-child(1){
     float: right;
     margin: 0 10% 0 0;
 }
