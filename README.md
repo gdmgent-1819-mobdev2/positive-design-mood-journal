@@ -1,4 +1,6 @@
-# This is the positive design mood journal called journy
+# Jourly
+
+## The positive design mood journal
 
 #### A project by:
 
@@ -6,8 +8,13 @@
 - Hannes De Baere
 - Hektor Misplon
 
-###
+## Packages
+
+- expo
+- react native
+- prettier
 
 ## Setup
 
-Install: yarn i
+1. yarn i / yarn install
+2. yarn start
