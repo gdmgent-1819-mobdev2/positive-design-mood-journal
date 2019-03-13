@@ -4,6 +4,7 @@ import { Font } from 'expo';
 // import this as component Text instead of Text component from 'react-native'
 import Text from './components/FiraText';
 import Login from './views/Login';
+import Settings from './views/Settings';
 
 export default class App extends React.Component {
 	state = {
@@ -28,10 +29,8 @@ export default class App extends React.Component {
 			return (
 				<View style={styles.container}>
 					<Login />
-					{this.state.fontLoaded ? (
-						// weight attribute: bold, light empty defaults to regular weight
-						<Text weight="light">Hello, I'm fira</Text>
-					) : null}
+					{/* // weight attribute: bold, light empty defaults to regular weight */}
+					<Text weight="light">Hello, I'm fira</Text>
 				</View>
 			);
 		} else {

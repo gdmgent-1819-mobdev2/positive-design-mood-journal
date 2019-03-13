@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
-		// FIXME: is it possible to set default font family globally?
+		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
 	},
 	container: {
