@@ -1,4 +1,5 @@
 import React from 'react';
+import Colors from './modules/Colors';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { LinearGradient } from 'expo';
 
@@ -19,7 +20,7 @@ export default class App extends React.Component {
 				/>
 				<LinearGradient
 					style={styles.btn}
-					colors={[colors.gradGreen1, colors.gradGreen2]}
+					colors={[Colors.gradGreen1, Colors.gradGreen2]}
 					start={[0, 1]}
 					end={[1, 0]}
 				>
@@ -31,27 +32,6 @@ export default class App extends React.Component {
 	}
 }
 
-const colors = {
-	white: '#fff',
-	black: '#000',
-	green: '#23E3AC',
-	blue: '#4DD4E9',
-	lightBlue: '#D1FFF2',
-	lightGray: '#EDF6F7',
-	gradPurple1: '#7C62CC',
-	gradPurple2: '#6171CC',
-	gradBlue1: '#43D2E8',
-	gradBlue2: '#0099BF',
-	gradRed1: '#FA6D35',
-	gradRed2: '#FAFA35',
-	gradGreen1: '#23E3AD',
-	gradGreen2: '#22E37F',
-	gradOrange1: '#FFA21F',
-	gradOrange2: '#FFCB1F',
-	gradYellow1: '#FFC31F',
-	gradYellow2: '#FFF31E'
-};
-
 const styles = StyleSheet.create({
 	btn: {
 		padding: 20,
@@ -61,7 +41,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	},
 	btnText: {
-		color: colors.white
+		color: Colors.white
 	},
 	input: {
 		padding: 20,
@@ -69,7 +49,7 @@ const styles = StyleSheet.create({
 		margin: 10,
 		flexDirection: 'row',
 		borderRadius: 75,
-		backgroundColor: colors.lightGray
+		backgroundColor: Colors.lightGray
 	},
 	container: {
 		flex: 1,
