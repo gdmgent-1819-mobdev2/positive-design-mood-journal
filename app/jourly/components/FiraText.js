@@ -13,20 +13,9 @@ class FiraText extends Component {
 		}
 	};
 	render() {
-		const font = this.setFontWeight(
-			this.props.type ? this.props.type : 'normal'
-		);
-		const weight = [{ fontFamily: font }, this.props.weight || {}];
-		const allProps = Object.assign({}, this.props, { style: weight });
-		return <Text {...allProps}>{this.props.children}</Text>;
+		const font = this.setFontWeight(this.props.weight);
+		return <Text style={{ fontFamily: font }}>{this.props.children}</Text>;
 	}
 }
-export default FiraText;
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center'
-	}
-});
+export default FiraText;
