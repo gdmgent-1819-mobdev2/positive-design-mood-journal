@@ -7,26 +7,37 @@ import Login from './views/Login';
 
 export default class App extends React.Component {
 	state = {
-		fontLoaded: false
+		appLoaded: false
 	};
 	async componentDidMount() {
-		await Font.loadAsync({
-			'fira-sans': require('./assets/fonts/FiraSans-Medium.ttf'),
-			'fira-sans-light': require('./assets/fonts/FiraSans-Light.ttf'),
-			'fira-sans-bold': require('./assets/fonts/FiraSans-ExtraBold.ttf')
-		});
-		this.setState({ fontLoaded: true });
+		try {
+			await Font.loadAsync({
+				'fira-sans': require('./assets/fonts/FiraSans-Medium.ttf'),
+				'fira-sans-light': require('./assets/fonts/FiraSans-Light.ttf'),
+				'fira-sans-bold': require('./assets/fonts/FiraSans-ExtraBold.ttf')
+			});
+		} catch (e) {
+			console.warn('Could not load fonts');
+			console.log(e.message);
+		} finally {
+			this.setState({ appLoaded: true });
+		}
 	}
 	render() {
-		return (
-			<View style={styles.container}>
-				<Login />
-				{this.state.fontLoaded ? (
-					// weight attribute: bold, light empty defaults to regular weight
-					<Text weight="light">Hello, I'm fira</Text>
-				) : null}
-			</View>
-		);
+		if (this.state.appLoaded) {
+			return (
+				<View style={styles.container}>
+					<Login />
+					{this.state.fontLoaded ? (
+						// weight attribute: bold, light empty defaults to regular weight
+						<Text weight="light">Hello, I'm fira</Text>
+					) : null}
+				</View>
+			);
+		} else {
+			// TODO: loader component
+			return null;
+		}
 	}
 }
 

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet } from 'react-native';
 
 import Colors from '../modules/Colors';
 import { LinearGradient } from 'expo';
+import Text from '../components/FiraText';
 
 export default class Login extends Component {
 	render() {
@@ -25,7 +26,9 @@ export default class Login extends Component {
 					start={[0, 1]}
 					end={[1, 0]}
 				>
-					<Text style={styles.btnText}>Sign In</Text>
+					<Text style={styles.btnText} weight={'bold'}>
+						Sign In
+					</Text>
 				</LinearGradient>
 				{/* TODO: add Sign Up button */}
 			</View>
@@ -50,7 +53,9 @@ const styles = StyleSheet.create({
 		margin: 10,
 		flexDirection: 'row',
 		borderRadius: 75,
-		backgroundColor: Colors.lightGray
+		backgroundColor: Colors.lightGray,
+		// FIXME: is it possible to set default font family globally?
+		fontFamily: 'fira-sans-light'
 	},
 	container: {
 		flex: 1,
