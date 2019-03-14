@@ -1,8 +1,30 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+
+// routing
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Font } from 'expo';
-import Login from './views/Login';
-import Settings from './views/Settings';
+import SignIn from './screens/SignIn';
+import Settings from './screens/Settings';
+import Home from './screens/Home';
+
+const AppNavigator = createStackNavigator(
+	{
+		SignIn: {
+			screen: SignIn
+		},
+		Settings: {
+			screen: Settings
+		},
+		Home: {
+			screen: Home
+		}
+	},
+	{
+		initialRouteName: 'Home'
+	}
+);
+const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
 	state = {
@@ -24,11 +46,7 @@ export default class App extends React.Component {
 	}
 	render() {
 		if (this.state.appLoaded) {
-			return (
-				<View style={styles.container}>
-					<Login />
-				</View>
-			);
+			return <AppContainer />;
 		} else {
 			// TODO: loader component
 			return null;
