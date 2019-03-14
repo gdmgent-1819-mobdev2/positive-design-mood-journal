@@ -24,16 +24,24 @@
 
 ### functionality:
 
-- ~~basic routing~~
-- refactor router component
+#### routing
 
-- authenticate user flow
-- bottom tab navigation once logged in
+- ~~basic routing~~
 - ~~screen organising~~
-- bottom tab bar routing
+- refactor router component
+- authenticate user flow
+- bottom tab bar navigation once logged in
+
+#### firebase
+
+- init firebase
+- sign up/in (extra: sign up facebook, google, github)
+- check auth
 
 ### design:
 
+- add images - rn svg or png?
+- icons
 - ~~load in custom fonts~~
 - ~~add colors~~
 - nested colors for easy access
