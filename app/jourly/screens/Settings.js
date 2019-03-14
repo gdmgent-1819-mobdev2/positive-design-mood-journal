@@ -1,3 +1,4 @@
+// change settings for the app - notifications, location, emailadress, extra: password, toggle 2FA
 import React, { Component } from 'react';
 import { View, Picker, TextInput, StyleSheet } from 'react-native';
 
