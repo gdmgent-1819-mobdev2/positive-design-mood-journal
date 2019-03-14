@@ -22,10 +22,17 @@
 
 ## To do
 
+### functionality:
+
 - ~~basic routing~~
-- ~~screen organising~~
 - refactor router component
+
+- authenticate user flow
+- bottom tab navigation once logged in
+- ~~screen organising~~
 - bottom tab bar routing
+
+### design:
 
 - ~~load in custom fonts~~
 - ~~add colors~~
