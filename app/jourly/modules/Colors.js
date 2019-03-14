@@ -2,7 +2,10 @@ export default {
 	white: '#fff',
 	black: '#000',
 	green: '#23E3AC',
-	blue: '#4DD4E9',
+	blue: {
+		default: '#4DD4E9',
+		light: '#D1FFF2'
+	},
 	lightBlue: '#D1FFF2',
 	lightGray: '#EDF6F7',
 	gradPurple1: '#7C62CC',
