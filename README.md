@@ -22,7 +22,9 @@
 
 ## To do
 
-- ~~router~~
+- ~~basic routing~~
+- ~~screen organising~~
+- refactor router component
 - bottom tab bar routing
 
 - ~~load in custom fonts~~
