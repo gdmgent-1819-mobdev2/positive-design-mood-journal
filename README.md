@@ -12,6 +12,7 @@
 
 - expo
 - react native
+- react navigation
 - prettier
 
 ## Setup
@@ -21,8 +22,11 @@
 
 ## To do
 
-- load in custom fonts
-- ~~add colors~~ - nested colors for easy access
+- ~~router~~
+- bottom tab bar routing
+
+- ~~load in custom fonts~~
+- ~~add colors~~
+- nested colors for easy access
 - fix styling through custom Text component
 - global styling for layout & typography
--
