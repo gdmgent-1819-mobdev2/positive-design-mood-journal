@@ -4,11 +4,13 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import Colors from '../modules/Colors';
 import { LinearGradient } from 'expo';
 import Text from '../components/FiraText';
+import FormInput from '../components/FormInput';
 
 export default class Login extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
+				<FormInput />
 				{/* TODO: add image */}
 				<TextInput
 					style={styles.input}
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		margin: 10,
 		flexDirection: 'column',
-		backgroundColor: '#fff',
+		backgroundColor: Colors.white,
 		alignItems: 'stretch',
 		justifyContent: 'center'
 	}

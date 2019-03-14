@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
-import Colors from '../modules/Colors';
+import colors from '../modules/Colors';
 
 // import this as component Text instead of Text component from 'react-native'
 import Text from '../components/FiraText';
