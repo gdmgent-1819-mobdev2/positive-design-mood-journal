@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 // routing
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Font } from 'expo';
-import SignIn from './screens/SignIn';
+import SignIn from './screens/auth/SignIn';
 import Settings from './screens/Settings';
 import Home from './screens/Home';
 
