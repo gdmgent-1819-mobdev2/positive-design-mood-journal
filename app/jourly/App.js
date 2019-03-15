@@ -7,6 +7,7 @@ import { Font } from 'expo';
 import SignIn from './screens/auth/SignIn';
 import Settings from './screens/Settings';
 import Home from './screens/Home';
+import { initFirebase } from './utils/firebase';
 
 const AppNavigator = createStackNavigator(
 	{
@@ -27,6 +28,11 @@ const AppNavigator = createStackNavigator(
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
+	constructor() {
+		super();
+
+		initFirebase();
+	}
 	state = {
 		appLoaded: false
 	};

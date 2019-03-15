@@ -1,0 +1,8 @@
+{
+    "apiKey": "AIzaSyCV59uszKy6VCUSD_PgZR5kxBQVm33kWCA",
+    "authDomain": "mood-jourly.firebaseapp.com",
+    "databaseURL": "https://mood-jourly.firebaseio.com",
+    "projectId": "mood-jourly",
+    "storageBucket": "mood-jourly.appspot.com",
+    "messagingSenderId": "1094014786244"
+}

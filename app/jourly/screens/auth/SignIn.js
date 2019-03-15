@@ -9,12 +9,29 @@ import {
 } from 'react-native';
 
 import Colors from '../../modules/Colors';
-import { LinearGradient } from 'expo';
 import Text from '../../components/FiraText';
 import FormInput from '../../components/FormInput';
 import GradientButton from '../../components/GradientButton';
+import firebase from 'firebase';
 
 class SignIn extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			email: '',
+			password: '',
+		}
+	}
+
+	async onLogIn() {
+		console.log('Logging in user.');
+		/* TODO: Navigate user back to home */
+		await firebase.auth()
+			.signInWithEmailAndPassword(this.state.email, this.state.password)
+			.then(() => console.log('Logged in!'));
+	}
+
 	render() {
 		return (
 		    <KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -22,21 +39,21 @@ class SignIn extends Component {
 				<TextInput
 					style={styles.input}
 					placeholder="Email"
-					onChangeText={text => this.setState({ email })}
+					onChangeText={email => this.setState({ email })}
 				/>
 				<TextInput
+					secureTextEntry={true}
 					style={styles.input}
 					placeholder="Password"
-					onChangeText={text => this.setState({ password })}
+					onChangeText={password => this.setState({ password })}
 				/>
 				<GradientButton 
 					colors={[Colors.gradGreen1, Colors.gradGreen2]}
 					startPos={[0, 1]}
 					endPos={[1, 0]}
 					text="Sign in"
-					onPress={() => this.props.navigation.navigate('Home')}
+					onPress={() => this.onLogIn()}
 				/>
-				{/* TODO: add Sign Up button */}
 			</KeyboardAvoidingView>
 		);
 	}
@@ -45,22 +62,10 @@ class SignIn extends Component {
 export default SignIn;
 
 const styles = StyleSheet.create({
-	btn: {
-		padding: 20,
-		flex: 1 / 24,
-		margin: 10,
-		borderRadius: 75,
-		justifyContent: 'center',
-		alignItems: 'center'
-	},
-	btnText: {
-		color: Colors.white
-	},
 	input: {
-		padding: 20,
-		flex: 1 / 24,
+		height: 60,
+		paddingLeft: 25,
 		margin: 10,
-		flexDirection: 'row',
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
 		// FIXME: check if possible to set default font family globally?
@@ -68,10 +73,10 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		flex: 1,
-		margin: 10,
-		flexDirection: 'column',
-		backgroundColor: Colors.white,
 		alignItems: 'stretch',
-		justifyContent: 'center'
-	}
+		justifyContent: 'center',
+		flexDirection: 'column',
+		margin: 10,
+		backgroundColor: Colors.white,
+	},
 });
