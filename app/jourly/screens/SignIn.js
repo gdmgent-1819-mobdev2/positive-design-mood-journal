@@ -4,7 +4,7 @@ import {
 	TextInput,
 	Button,
 	StyleSheet,
-	Picker
+	TouchableWithoutFeedback
 } from 'react-native';
 
 import Colors from '../modules/Colors';
@@ -16,9 +16,10 @@ class SignIn extends Component {
 	render() {
 		return (
 			<KeyboardAvoidingView style={styles.container} behavior="padding">
-				<FormInput />
 				{/* TODO: add image */}
-				<TextInput
+				<FormInput />
+				<FormInput />
+				{/* <TextInput
 					style={styles.input}
 					placeholder="Email"
 					onChangeText={text => this.setState({ email })}
@@ -27,21 +28,25 @@ class SignIn extends Component {
 					style={styles.input}
 					placeholder="Password"
 					onChangeText={text => this.setState({ password })}
-				/>
-				<LinearGradient
-					style={styles.btn}
-					colors={[Colors.gradGreen1, Colors.gradGreen2]}
-					start={[0, 1]}
-					end={[1, 0]}
+				/> */}
+				<TouchableWithoutFeedback
+					onPress={() => this.props.navigation.navigate('Home')}
 				>
-					<Text style={styles.btnText} weight={'bold'}>
-						Sign In
-					</Text>
-					<Button
-						title="Sign In"
-						onPress={() => this.props.navigation.navigate('Home')}
-					/>
-				</LinearGradient>
+					<LinearGradient
+						style={styles.btn}
+						colors={[Colors.gradGreen1, Colors.gradGreen2]}
+						start={[0, 1]}
+						end={[1, 0]}
+					>
+						<Text style={styles.btnText} weight={'bold'}>
+							Sign In
+						</Text>
+						{/* <Button
+							title="Sign In"
+							onPress={() => this.props.navigation.navigate('Home')}
+						/> */}
+					</LinearGradient>
+				</TouchableWithoutFeedback>
 				{/* TODO: add Sign Up button */}
 			</KeyboardAvoidingView>
 		);
