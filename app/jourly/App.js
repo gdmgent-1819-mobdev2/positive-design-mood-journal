@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 
 // routing
 import { createStackNavigator, createAppContainer } from 'react-navigation';
@@ -21,7 +20,7 @@ const AppNavigator = createStackNavigator(
 		}
 	},
 	{
-		initialRouteName: 'Home'
+		initialRouteName: 'SignIn'
 	}
 );
 const AppContainer = createAppContainer(AppNavigator);
@@ -53,9 +52,3 @@ export default class App extends React.Component {
 		}
 	}
 }
-
-styles = StyleSheet.create({
-	container: {
-		flex: 1
-	}
-});
