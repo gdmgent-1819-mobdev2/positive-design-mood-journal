@@ -3,6 +3,9 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import Colors from '../modules/Colors';
 
 class FormInput extends Component {
+	props = {
+		placeholder: ''
+	};
 	state = {
 		isFocused: false
 	};
@@ -24,12 +27,12 @@ class FormInput extends Component {
 		const { onFocus, onBlur, ...otherProps } = this.props;
 		return (
 			<TextInput
+				style={styles.textInput}
 				selectionColor={Colors.gradGreen1}
 				underlineColorAndroid={isFocused ? Colors.gradGreen2 : Colors.white}
 				placeholder="FormInput Component" //FIXME: hardcoded
 				onFocus={this.handleFocus}
 				onBlur={this.handleBlur}
-				style={styles.textInput}
 				{...otherProps}
 			/>
 		);
@@ -41,7 +44,6 @@ export default FormInput;
 const styles = StyleSheet.create({
 	textInput: {
 		height: 40,
-		paddingLeft: 6,
 		padding: 20,
 		flex: 1 / 24,
 		margin: 10,
