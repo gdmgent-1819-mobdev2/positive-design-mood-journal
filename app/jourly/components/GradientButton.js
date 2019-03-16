@@ -5,10 +5,10 @@ import Text from '../components/FiraText';
 
 export default class GradientButton extends Component {
   render() {
-    const { colors, startPos, endPos, text } = this.props;
+    const { colors, startPos, endPos, text, onPress } = this.props;
 
     return (
-        <TouchableOpacity onPress={this.props.onPress} activeOpacity={0.8}>
+        <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
             <LinearGradient
                 style={styles.btnContainer}
                 colors={colors}

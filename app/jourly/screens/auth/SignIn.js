@@ -24,12 +24,13 @@ class SignIn extends Component {
 		}
 	}
 
-	async onLogIn() {
-		console.log('Logging in user.');
-		/* TODO: Navigate user back to home */
+	async onSignIn() {
+		const { email, password } = this.state;
+
 		await firebase.auth()
-			.signInWithEmailAndPassword(this.state.email, this.state.password)
-			.then(() => console.log('Logged in!'));
+			.signInWithEmailAndPassword(email, password)
+			.then(() => this.props.navigation.navigate('Home'))
+			.catch((err) => console.log(err));
 	}
 
 	render() {
@@ -52,8 +53,11 @@ class SignIn extends Component {
 					startPos={[0, 1]}
 					endPos={[1, 0]}
 					text="Sign in"
-					onPress={() => this.onLogIn()}
+					onPress={() => this.onSignIn()}
 				/>
+				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
+					<Text style={{textAlign: 'center'}}>Register</Text>
+				</TouchableOpacity>
 			</KeyboardAvoidingView>
 		);
 	}

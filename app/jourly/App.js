@@ -5,6 +5,7 @@ import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Font } from 'expo';
 import SignIn from './screens/auth/SignIn';
+import SignUp from './screens/auth/SignUp';
 import Settings from './screens/Settings';
 import Home from './screens/Home';
 import { initFirebase } from './utils/firebase';
@@ -13,6 +14,9 @@ const AppNavigator = createStackNavigator(
 	{
 		SignIn: {
 			screen: SignIn
+		},
+		SignUp: {
+			screen: SignUp
 		},
 		Settings: {
 			screen: Settings
