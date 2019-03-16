@@ -33,8 +33,8 @@ class SignUp extends Component {
 		} else {
 			await firebase.auth()
 				.createUserWithEmailAndPassword(email, password)
-				.then(() => this.props.navigation.navigate('Home'))
-				.catch((err) => console.log(err));
+					.then(() => this.props.navigation.navigate('Home'))
+					.catch((err) => console.log(err));
 		}	
 	}
 
@@ -63,8 +63,8 @@ class SignUp extends Component {
 					colors={[Colors.gradGreen1, Colors.gradGreen2]}
 					startPos={[0, 1]}
 					endPos={[1, 0]}
-					text="Sign in"
-					onPress={() => this.onSubmit()}
+					text="Sign Up"
+					onPress={() => this.onSignUp()}
 				/>
 				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
 					<Text style={{textAlign: 'center'}}>Sign In</Text>
