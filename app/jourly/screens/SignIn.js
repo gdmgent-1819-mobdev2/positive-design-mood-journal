@@ -47,7 +47,11 @@ class SignIn extends Component {
 						/> */}
 					</LinearGradient>
 				</TouchableWithoutFeedback>
-				{/* TODO: add Sign Up button */}
+				<Button
+					color={Colors.darkGray}
+					title="Sign Up"
+					onPress={() => this.props.navigation.navigate('SignUp')}
+				/>
 			</KeyboardAvoidingView>
 		);
 	}
