@@ -24,13 +24,15 @@ export default class CurrentMood extends Component {
 				start={[0, 0]}
 				end={[1, 1]}
 			>
-				<Text>Current Mood</Text>
-				<Text>{this.state.moodRating}</Text>
+				<Text color={Colors.white}>Current Mood</Text>
+				<Text color={Colors.white}>{this.state.moodRating}</Text>
 				{/* TODO: add animated svg */}
 				<Svg style={styles.emoticon}>
 					<Svg.Circle cx={50} cy={50} r={45} fill={Colors.white} />
 				</Svg>
-				<Text style={styles.text}>Home</Text>
+				<Text style={styles.text} color={Colors.white}>
+					Home
+				</Text>
 			</LinearGradient>
 		);
 	}

@@ -14,7 +14,7 @@ export class GradientButton extends Component {
 					start={[0, 1]}
 					end={[1, 0]}
 				>
-					<Text style={styles.btnText} weight={'bold'}>
+					<Text style={styles.btnText} weight={'bold'} color={Colors.white}>
 						{this.props.placeholder}
 					</Text>
 				</LinearGradient>

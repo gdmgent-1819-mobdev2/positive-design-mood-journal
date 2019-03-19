@@ -14,7 +14,11 @@ class FiraText extends Component {
 	};
 	render() {
 		const font = this.setFontWeight(this.props.weight);
-		return <Text style={{ fontFamily: font }}>{this.props.children}</Text>;
+		return (
+			<Text style={{ fontFamily: font, color: this.props.color }}>
+				{this.props.children}
+			</Text>
+		);
 	}
 }
 
