@@ -1,34 +1,27 @@
-import React, { Component } from 'react'
-import { View, TextInput, StyleSheet } from 'react-native'
-import Colors from '../modules/Colors'
+import React, { Component } from 'react';
+import { View, TextInput, StyleSheet } from 'react-native';
+import Colors from '../modules/Colors';
 
 class FormInput extends Component {
-<<<<<<< HEAD
-=======
 	props = {
 		placeholder: ''
-	}
->>>>>>> 4e79d29c0db9896d58fb001a58df1ba741de2dcc
+	};
 	state = {
 		isFocused: false
-	}
-	handleFocus = e => {
-		this.setState({ isFocused: true })
-		if (this.props.onFocus) {
-			this.props.onFocus(e)
-		}
-<<<<<<< HEAD
 	};
-=======
-	}
-
->>>>>>> 4e79d29c0db9896d58fb001a58df1ba741de2dcc
-	handleBlur = e => {
-		this.setState({ isFocused: false })
-		if (this.props.onBlur) {
-			this.props.onBlur(e)
+	handleFocus = e => {
+		this.setState({ isFocused: true });
+		if (this.props.onFocus) {
+			this.props.onFocus(e);
 		}
-	}
+	};
+
+	handleBlur = e => {
+		this.setState({ isFocused: false });
+		if (this.props.onBlur) {
+			this.props.onBlur(e);
+		}
+	};
 	render() {
 		const { isFocused } = this.state;
 		const { onFocus, onBlur, ...otherProps } = this.props;
@@ -41,7 +34,7 @@ class FormInput extends Component {
 				onBlur={this.handleBlur}
 				{...otherProps}
 			/>
-		)
+		);
 	}
 }
 
@@ -49,15 +42,13 @@ export default FormInput;
 
 const styles = StyleSheet.create({
 	textInput: {
-		height: 40,
 		padding: 20,
-		flex: 1 / 24,
+		flex: 1 / 9,
 		marginTop: 10,
 		marginBottom: 10,
 		flexDirection: 'row',
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
-		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
 	}
 });

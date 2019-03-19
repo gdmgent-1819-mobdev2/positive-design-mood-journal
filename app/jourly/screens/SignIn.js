@@ -14,6 +14,7 @@ import { LinearGradient } from 'expo';
 import Text from '../components/FiraText';
 import Logo from '../components/Logo';
 import FormInput from '../components/FormInput';
+import GradientButton from '../components/GradientButton';
 
 class SignIn extends Component {
 	render() {
@@ -25,20 +26,7 @@ class SignIn extends Component {
 				<View style={styles.formGroup}>
 					<FormInput />
 					<FormInput />
-					<TouchableWithoutFeedback
-						onPress={() => this.props.navigation.navigate('Home')}
-					>
-						<LinearGradient
-							style={styles.btn}
-							colors={[Colors.gradGreen1, Colors.gradGreen2]}
-							start={[0, 1]}
-							end={[1, 0]}
-						>
-							<Text style={styles.btnText} weight={'bold'}>
-								Sign In
-							</Text>
-						</LinearGradient>
-					</TouchableWithoutFeedback>
+					<GradientButton />
 				</View>
 				{/* TODO: add Sign Up button */}
 			</KeyboardAvoidingView>
@@ -49,17 +37,6 @@ class SignIn extends Component {
 export default SignIn;
 
 const styles = StyleSheet.create({
-	btn: {
-		padding: 20,
-		flex: 1 / 24,
-		marginTop: 10,
-		marginBottom: 10,
-		borderRadius: 75,
-		justifyContent: 'center'
-	},
-	btnText: {
-		color: Colors.white
-	},
 	input: {
 		padding: 20,
 		flex: 1 / 24,
