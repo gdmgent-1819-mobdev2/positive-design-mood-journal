@@ -3,9 +3,6 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import Colors from '../modules/Colors';
 
 class FormInput extends Component {
-	props = {
-		placeholder: ''
-	};
 	state = {
 		isFocused: false
 	};
@@ -15,7 +12,6 @@ class FormInput extends Component {
 			this.props.onFocus(e);
 		}
 	};
-
 	handleBlur = e => {
 		this.setState({ isFocused: false });
 		if (this.props.onBlur) {
@@ -46,7 +42,8 @@ const styles = StyleSheet.create({
 		height: 40,
 		padding: 20,
 		flex: 1 / 24,
-		margin: 10,
+		marginTop: 10,
+		marginBottom: 10,
 		flexDirection: 'row',
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
