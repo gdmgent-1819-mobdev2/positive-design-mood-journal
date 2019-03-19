@@ -14,8 +14,8 @@ class SignIn extends Component {
 					<Logo />
 				</View>
 				<View style={styles.formGroup}>
-					<FormInput />
-					<FormInput />
+					<FormInput placeholder="Email" />
+					<FormInput placeholder="Password" />
 					{/* grad button: placeholder, onPress */}
 					<GradientButton
 						placeholder="Sign In"
