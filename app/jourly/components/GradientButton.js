@@ -7,9 +7,7 @@ import Text from '../components/FiraText';
 export class GradientButton extends Component {
 	render() {
 		return (
-			<TouchableWithoutFeedback
-				onPress={() => this.props.navigation.navigate('Home')}
-			>
+			<TouchableWithoutFeedback onPress={this.props.onPress}>
 				<LinearGradient
 					style={styles.btn}
 					colors={[Colors.gradGreen1, Colors.gradGreen2]}
@@ -17,7 +15,7 @@ export class GradientButton extends Component {
 					end={[1, 0]}
 				>
 					<Text style={styles.btnText} weight={'bold'}>
-						Sign In
+						{this.props.placeholder}
 					</Text>
 				</LinearGradient>
 			</TouchableWithoutFeedback>

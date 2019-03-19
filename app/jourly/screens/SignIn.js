@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
-import {
-	View,
-	KeyboardAvoidingView,
-	TextInput,
-	Button,
-	StyleSheet,
-	TouchableWithoutFeedback,
-	Svg
-} from 'react-native';
+import { View, KeyboardAvoidingView, StyleSheet, Svg } from 'react-native';
 
 import Colors from '../modules/Colors';
-import { LinearGradient } from 'expo';
-import Text from '../components/FiraText';
 import Logo from '../components/Logo';
 import FormInput from '../components/FormInput';
 import GradientButton from '../components/GradientButton';
@@ -26,9 +16,13 @@ class SignIn extends Component {
 				<View style={styles.formGroup}>
 					<FormInput />
 					<FormInput />
-					<GradientButton />
+					{/* grad button: placeholder, onPress */}
+					<GradientButton
+						placeholder="Sign In"
+						onPress={() => this.props.navigation.navigate('Home')}
+					/>
+					<GradientButton placeholder="Sign Up" />
 				</View>
-				{/* TODO: add Sign Up button */}
 			</KeyboardAvoidingView>
 		);
 	}
