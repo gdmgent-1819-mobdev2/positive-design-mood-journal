@@ -358,4 +358,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# google firebase configuration
+*.FirebaseConfig
+
 # End of https://www.gitignore.io/api/node,sass,macos,bower,windows,reactnative

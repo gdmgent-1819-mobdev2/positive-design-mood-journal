@@ -4,6 +4,7 @@ import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Font } from 'expo';
 import SignIn from './screens/SignIn';
+import SignUp from './screens/SignUp';
 import Settings from './screens/Settings';
 import Home from './screens/Home';
 
@@ -11,6 +12,9 @@ const AppNavigator = createStackNavigator(
 	{
 		SignIn: {
 			screen: SignIn
+		},
+		SignUp: {
+			screen: SignUp
 		},
 		Settings: {
 			screen: Settings

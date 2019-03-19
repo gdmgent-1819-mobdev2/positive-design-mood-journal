@@ -1,23 +1,34 @@
-import React, { Component } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
-import Colors from '../modules/Colors';
+import React, { Component } from 'react'
+import { View, TextInput, StyleSheet } from 'react-native'
+import Colors from '../modules/Colors'
 
 class FormInput extends Component {
+<<<<<<< HEAD
+=======
+	props = {
+		placeholder: ''
+	}
+>>>>>>> 4e79d29c0db9896d58fb001a58df1ba741de2dcc
 	state = {
 		isFocused: false
-	};
+	}
 	handleFocus = e => {
-		this.setState({ isFocused: true });
+		this.setState({ isFocused: true })
 		if (this.props.onFocus) {
-			this.props.onFocus(e);
+			this.props.onFocus(e)
 		}
+<<<<<<< HEAD
 	};
+=======
+	}
+
+>>>>>>> 4e79d29c0db9896d58fb001a58df1ba741de2dcc
 	handleBlur = e => {
-		this.setState({ isFocused: false });
+		this.setState({ isFocused: false })
 		if (this.props.onBlur) {
-			this.props.onBlur(e);
+			this.props.onBlur(e)
 		}
-	};
+	}
 	render() {
 		const { isFocused } = this.state;
 		const { onFocus, onBlur, ...otherProps } = this.props;
@@ -26,12 +37,11 @@ class FormInput extends Component {
 				style={styles.textInput}
 				selectionColor={Colors.gradGreen1}
 				underlineColorAndroid={isFocused ? Colors.gradGreen2 : Colors.white}
-				placeholder="FormInput Component" //FIXME: hardcoded
 				onFocus={this.handleFocus}
 				onBlur={this.handleBlur}
 				{...otherProps}
 			/>
-		);
+		)
 	}
 }
 
