@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< Updated upstream
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 
 // TODO: add bottom tab navigator
@@ -25,6 +26,17 @@ class Home extends Component {
 					onPress={() => this.props.navigation.navigate('Settings')}
 				/>
 			</View>
+=======
+
+import CurrentMood from '../components/CurrentMood';
+
+export default class Home extends Component {
+	state = {};
+	render() {
+		return (
+			<CurrentMood />
+			// TODO: add bottom nav bar here
+>>>>>>> Stashed changes
 		);
 	}
 }
