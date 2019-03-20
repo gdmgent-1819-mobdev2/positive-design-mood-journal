@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import {
 	KeyboardAvoidingView,
 	TextInput,
@@ -11,11 +12,20 @@ import Colors from '../modules/Colors';
 import { LinearGradient } from 'expo';
 import Text from '../components/FiraText';
 import FormInput from '../components/FormInput';
+=======
+import { View, KeyboardAvoidingView, StyleSheet, Svg } from 'react-native';
+
+import Colors from '../modules/Colors';
+import Logo from '../components/Logo';
+import FormInput from '../components/FormInput';
+import GradientButton from '../components/GradientButton';
+>>>>>>> 1dda839f9bc7a1fe597fd3e50e0a1c874b46a95b
 
 class SignIn extends Component {
 	render() {
 		return (
 			<KeyboardAvoidingView style={styles.container} behavior="padding">
+<<<<<<< HEAD
 				{/* TODO: add image */}
 				<FormInput />
 				<FormInput />
@@ -52,6 +62,27 @@ class SignIn extends Component {
 					title="Sign Up"
 					onPress={() => this.props.navigation.navigate('SignUp')}
 				/>
+=======
+				<View style={styles.logoContainer}>
+					<Logo />
+				</View>
+				<View style={styles.formGroup}>
+					<FormInput placeholder="Email" />
+					<FormInput placeholder="Password" />
+					{/* grad button: placeholder, onPress */}
+					<GradientButton
+						placeholder="Sign In"
+						onPress={() => this.props.navigation.navigate('Home')}
+					/>
+					<GradientButton
+						placeholder="Sign Up"
+						onPress={() => this.props.navigation.navigate('SignUp')}
+					>
+						{' '}
+					</GradientButton>
+					/>
+				</View>
+>>>>>>> 1dda839f9bc7a1fe597fd3e50e0a1c874b46a95b
 			</KeyboardAvoidingView>
 		);
 	}
@@ -60,6 +91,7 @@ class SignIn extends Component {
 export default SignIn;
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
 	btn: {
 		padding: 20,
 		flex: 1 / 24,
@@ -74,6 +106,11 @@ const styles = StyleSheet.create({
 		padding: 20,
 		flex: 1 / 24,
 		margin: 10,
+=======
+	input: {
+		padding: 20,
+		flex: 1 / 24,
+>>>>>>> 1dda839f9bc7a1fe597fd3e50e0a1c874b46a95b
 		flexDirection: 'row',
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
@@ -84,8 +121,23 @@ const styles = StyleSheet.create({
 		flex: 1,
 		margin: 10,
 		flexDirection: 'column',
+<<<<<<< HEAD
 		backgroundColor: Colors.white,
 		alignItems: 'stretch',
 		justifyContent: 'center'
+=======
+		justifyContent: 'center',
+		backgroundColor: Colors.white
+	},
+	logoContainer: {
+		flex: 0.5,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	formGroup: {
+		flex: 0.5,
+		justifyContent: 'center',
+		alignItems: 'stretch'
+>>>>>>> 1dda839f9bc7a1fe597fd3e50e0a1c874b46a95b
 	}
 });

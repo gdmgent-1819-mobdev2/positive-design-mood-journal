@@ -2,7 +2,7 @@ import React from 'react';
 
 
 // routing
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { Font } from 'expo';
 import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
@@ -11,7 +11,7 @@ import Home from './screens/Home';
 import JournalEntries from './screens/JournalEntries';
 import { initFirebase } from './utils/firebase';
 
-const AppNavigator = createStackNavigator(
+const AppNavigator = createSwitchNavigator(
 	{
 		SignIn: {
 			screen: SignIn

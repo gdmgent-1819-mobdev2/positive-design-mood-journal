@@ -2,6 +2,7 @@
 //  searchbar
 //  latest entries
 
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import {
 	KeyboardAvoidingView,
@@ -83,3 +84,16 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.white,
 	},
 });
+=======
+import React, { Component } from 'react';
+
+export default class JournalEntries extends Component {
+	render() {
+		return (
+			// TODO: searchbar
+			// TODO: latest entries
+			null
+		);
+	}
+}
+>>>>>>> 1dda839f9bc7a1fe597fd3e50e0a1c874b46a95b
