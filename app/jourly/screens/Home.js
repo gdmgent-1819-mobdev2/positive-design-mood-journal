@@ -4,9 +4,6 @@ import Colors from '../modules/Colors';
 
 import CurrentMood from '../components/CurrentMood';
 
-// TODO: add bottom tab navigator
-import CurrentMood from '../components/CurrentMood';
-
 export default class Home extends Component {
 	state = {};
 	render() {
