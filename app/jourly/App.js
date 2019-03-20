@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+
 
 // routing
 import { createStackNavigator, createAppContainer } from 'react-navigation';
@@ -8,6 +8,7 @@ import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
 import Settings from './screens/Settings';
 import Home from './screens/Home';
+import JournalEntries from './screens/JournalEntries';
 import { initFirebase } from './utils/firebase';
 
 const AppNavigator = createStackNavigator(
@@ -23,10 +24,13 @@ const AppNavigator = createStackNavigator(
 		},
 		Home: {
 			screen: Home
-		}
+		},
+		Entries: {
+			screen: JournalEntries
+		},
 	},
 	{
-		initialRouteName: 'Home'
+		initialRouteName: 'SignUp'
 	}
 );
 const AppContainer = createAppContainer(AppNavigator);
@@ -63,9 +67,3 @@ export default class App extends React.Component {
 		}
 	}
 }
-
-styles = StyleSheet.create({
-	container: {
-		flex: 1
-	}
-});
