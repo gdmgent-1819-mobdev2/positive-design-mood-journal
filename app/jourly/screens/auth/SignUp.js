@@ -20,8 +20,8 @@ class SignUp extends Component {
 
 		this.state = {
 			email: '',
-            password: '',
-            passwordRepeat: '',
+			password: '',
+			passwordRepeat: '',
 		}
 	}
 
@@ -30,11 +30,14 @@ class SignUp extends Component {
 
 		if (password !== passwordRepeat) {
 			console.log('Error: Password does not match.');
+			alert('Passwords are not equal!')
 		} else {
 			await firebase.auth()
 				.createUserWithEmailAndPassword(email, password)
+					//if succesfull register, the user will be redirected to the home page
 					.then(() => this.props.navigation.navigate('Home'))
-					.catch((err) => console.log(err));
+					//every error is shown to the user through an alert
+					.catch((err) => alert(err));
 		}	
 	}
 
@@ -66,7 +69,7 @@ class SignUp extends Component {
 					text="Sign Up"
 					onPress={() => this.onSignUp()}
 				/>
-				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
+				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignIn')}>
 					<Text style={{textAlign: 'center'}}>Sign In</Text>
 				</TouchableOpacity>
 			</KeyboardAvoidingView>

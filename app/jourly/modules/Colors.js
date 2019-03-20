@@ -8,6 +8,7 @@ export default {
 	},
 	lightBlue: '#D1FFF2',
 	lightGray: '#EDF6F7',
+	darkGray: '#575757',
 	gradPurple1: '#7C62CC',
 	gradPurple2: '#6171CC',
 	gradBlue1: '#43D2E8',

@@ -29,8 +29,10 @@ class SignIn extends Component {
 
 		await firebase.auth()
 			.signInWithEmailAndPassword(email, password)
+			//if succesfull register, the user will be redirected to the home page
 			.then(() => this.props.navigation.navigate('Home'))
-			.catch((err) => console.log(err));
+			//every error is shown to the user through an alert
+			.catch((err) => alert(err));
 	}
 
 	render() {
