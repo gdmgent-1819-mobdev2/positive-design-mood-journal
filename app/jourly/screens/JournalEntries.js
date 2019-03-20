@@ -2,59 +2,59 @@
 //  searchbar
 //  latest entries
 
-<<<<<<< HEAD
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
 	KeyboardAvoidingView,
-    TextInput,
+	TextInput,
 	Button,
 	StyleSheet,
 	Picker,
-    TouchableOpacity,
-    Text,
-    View,
-    Header,
+	TouchableOpacity,
+	Text,
+	View,
+	Header
 } from 'react-native';
-import Colors from '../modules/Colors'
+import Colors from '../modules/Colors';
 
-import CurrentMood from '../components/CurrentMood'
+import CurrentMood from '../components/CurrentMood';
 import { bold } from 'ansi-colors';
 
-
 export default class JournalEntries extends Component {
-    constructor(props) {
-        super(props)
-        
-        this.state = {
-            feelintTitle:'',
-            feelingText: '',
-        }
-    }
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			feelintTitle: '',
+			feelingText: ''
+		};
+	}
 	render() {
-		return(
-            <KeyboardAvoidingView style={styles.container} behavior="padding">
-                {/* FIX ME here needs to come a header! */}
-                {/* input field for the title of your mood*/}
-                <TextInput
-                    style={styles.title}
-                    placeholder="Enter a title"
-                    onChangeText={feelintTitle => this.setState({ feelintTitle })}
-                />
-                {/* input field for the message of your mood*/}
-                <TextInput
-                    style={styles.text}
-                    placeholder="What's the matter?"
-                    multiline={true}
-                    onChangeText={(feelingText) => this.setState({feelingText})}
-                />
-                {/* button to save the message of the mood */}
-                {/* FIX ME: needs to be a round button with a checkmark*/}
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-                    <Text style={{textAlign: 'center'}}>Submit</Text>
-                </TouchableOpacity>
-            </KeyboardAvoidingView>
-        )
-    }
+		return (
+			<KeyboardAvoidingView style={styles.container} behavior="padding">
+				{/* FIX ME here needs to come a header! */}
+				{/* input field for the title of your mood*/}
+				<TextInput
+					style={styles.title}
+					placeholder="Enter a title"
+					onChangeText={feelintTitle => this.setState({ feelintTitle })}
+				/>
+				{/* input field for the message of your mood*/}
+				<TextInput
+					style={styles.text}
+					placeholder="What's the matter?"
+					multiline={true}
+					onChangeText={feelingText => this.setState({ feelingText })}
+				/>
+				{/* button to save the message of the mood */}
+				{/* FIX ME: needs to be a round button with a checkmark*/}
+				<TouchableOpacity
+					onPress={() => this.props.navigation.navigate('Home')}
+				>
+					<Text style={{ textAlign: 'center' }}>Submit</Text>
+				</TouchableOpacity>
+			</KeyboardAvoidingView>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
@@ -63,15 +63,15 @@ const styles = StyleSheet.create({
 		paddingLeft: 25,
 		margin: 10,
 		// FIXME: check if possible to set default font family globally?
-        fontFamily: 'fira-sans-light',
-        fontSize: 28,
-        fontWeight: 'bold',
-    },
-    text: {
+		fontFamily: 'fira-sans-light',
+		fontSize: 28,
+		fontWeight: 'bold'
+	},
+	text: {
 		flex: 0.55,
 		paddingLeft: 25,
-        margin: 10,
-        fontSize: 15,
+		margin: 10,
+		fontSize: 15,
 		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
 	},
@@ -81,19 +81,6 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		flexDirection: 'column',
 		margin: 10,
-		backgroundColor: Colors.white,
-	},
-});
-=======
-import React, { Component } from 'react';
-
-export default class JournalEntries extends Component {
-	render() {
-		return (
-			// TODO: searchbar
-			// TODO: latest entries
-			null
-		);
+		backgroundColor: Colors.white
 	}
-}
->>>>>>> 1dda839f9bc7a1fe597fd3e50e0a1c874b46a95b
+});
