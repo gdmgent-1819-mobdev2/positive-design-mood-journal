@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 
 // TODO: add bottom tab navigator
@@ -27,6 +28,8 @@ class Home extends Component {
 				/>
 			</View>
 =======
+=======
+>>>>>>> Stashed changes
 
 import CurrentMood from '../components/CurrentMood';
 
@@ -36,6 +39,9 @@ export default class Home extends Component {
 		return (
 			<CurrentMood />
 			// TODO: add bottom nav bar here
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		);
 	}
