@@ -1,17 +1,22 @@
 import React from 'react';
-
+import { Font } from 'expo';
 
 // routing
-import { createSwitchNavigator, createAppContainer } from 'react-navigation';
-import { Font } from 'expo';
+import {
+	createSwitchNavigator,
+	createAppContainer,
+	createBottomTabNavigator,
+	createStackNavigator
+} from 'react-navigation';
 import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
 import Settings from './screens/Settings';
 import Home from './screens/Home';
 import JournalEntries from './screens/JournalEntries';
+import AuthLoadingScreen from './screens/AuthLoadingScreen';
 import { initFirebase } from './utils/firebase';
 
-const AppNavigator = createSwitchNavigator(
+const AuthStack = createStackNavigator(
 	{
 		SignIn: {
 			screen: SignIn
@@ -19,26 +24,41 @@ const AppNavigator = createSwitchNavigator(
 		SignUp: {
 			screen: SignUp
 		},
-		Settings: {
-			screen: Settings
-		},
 		Home: {
 			screen: Home
-		},
-		Entries: {
-			screen: JournalEntries
-		},
+		}
 	},
 	{
-		initialRouteName: 'SignUp'
+		initialRouteName: 'SignIn'
 	}
 );
-const AppContainer = createAppContainer(AppNavigator);
+
+const AppStack = createBottomTabNavigator({
+	Home: {
+		screen: Home
+	},
+	JournalEntries: {
+		screen: JournalEntries
+	},
+	Settings: {
+		screen: Settings
+	}
+});
+
+const AppContainer = createAppContainer(
+	createSwitchNavigator({
+		AuthLoading: AuthLoadingScreen,
+		App: AppStack,
+		Auth: AuthStack
+	}),
+	{
+		initialRouteName: 'AuthLoadingScreen'
+	}
+);
 
 export default class App extends React.Component {
 	constructor() {
 		super();
-
 		initFirebase();
 	}
 	state = {
