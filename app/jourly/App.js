@@ -10,13 +10,16 @@ import {
 	createBottomTabNavigator,
 	createStackNavigator
 } from 'react-navigation';
+// stack
+import AuthLoadingScreen from './screens/AuthLoadingScreen';
 import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
-import Settings from './screens/Settings';
+// tabs
 import Home from './screens/Home';
 import JournalEntries from './screens/JournalEntries';
+import JournalEntry from './screens/JournalEntry';
 import JournalTimeline from './screens/JournalTimeline';
-import AuthLoadingScreen from './screens/AuthLoadingScreen';
+import Settings from './screens/Settings';
 import { initFirebase } from './utils/firebase';
 
 const AuthStack = createStackNavigator(
@@ -39,33 +42,40 @@ const AuthStack = createStackNavigator(
 const AppStack = createBottomTabNavigator(
 	{
 		Home: {
-			screen: Home
-			// navigationOptions: {
-			// 	tabBarLabel: 'Home',
-			// 	tabBarIcon: ({ tintColor }) => (
-			// 		<Image
-			// 			source={require('./assets/images/homeicon.png')}
-			// 			style={[styles.icon, { tintColor: tintColor }]}
-			// 		/>
-			// 	)
-			// }
+			screen: Home,
+			navigationOptions: {
+				tabBarLabel: 'Home',
+				tabBarIcon: ({ tintColor }) => <Ionicons name="md-home" size={32} />
+			}
 		},
 		JournalEntries: {
 			screen: JournalEntries,
 			navigationOptions: {
-				tabBarLabel: 'Entries'
+				tabBarLabel: 'Entries',
+				tabBarIcon: ({ tintColor }) => <Ionicons name="md-albums" size={32} />
+			}
+		},
+		JournalEntry: {
+			screen: JournalEntry,
+			navigationOptions: {
+				tabBarLabel: 'Add entry',
+				tabBarIcon: ({ tintColor }) => <Ionicons name="md-add" size={32} />
 			}
 		},
 		JournalTimeline: {
 			screen: JournalTimeline,
 			navigationOptions: {
-				tabBarLabel: 'Timeline'
+				tabBarLabel: 'Timeline',
+				tabBarIcon: ({ tintColor }) => (
+					<Ionicons name="md-analytics" size={32} />
+				)
 			}
 		},
 		Settings: {
 			screen: Settings,
 			navigationOptions: {
-				tabBarLabel: 'Options'
+				tabBarLabel: 'Options',
+				tabBarIcon: ({ tintColor }) => <Ionicons name="md-options" size={32} />
 			}
 		}
 	},
