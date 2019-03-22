@@ -16,15 +16,15 @@ export default class Home extends Component {
 				</View>
 				<View style={styles.cardContainer}>
 					<View style={styles.titleContainer}>
-						<Text weight='bold' style={{fontSize: 24,}}>Recent Notes</Text>
+						<Text weight='bold' style={{fontSize: 24}}>Recent Notes</Text>
 						<Text style={{fontSize: 18}}>View All</Text>
 					</View>
 					<ScrollView>
-						<MoodCard />
-						<MoodCard />
-						<MoodCard />
-						<MoodCard />
-						<MoodCard />
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradBlue1, Colors.gradBlue2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradRed1, Colors.gradRed2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
 					</ScrollView>
 				</View>
 			</View>

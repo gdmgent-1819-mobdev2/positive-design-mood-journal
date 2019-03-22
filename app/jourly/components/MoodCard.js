@@ -4,17 +4,19 @@ import Text from './FiraText';
 import { LinearGradient } from 'expo';
 import Colors from '../modules/Colors';
 
-export class MoodCard extends Component {
+export default class MoodCard extends Component {
 	render() {
+		const { mood, title, body } = this.props;
+
 		return (
             <TouchableWithoutFeedback>
 				<LinearGradient style={styles.card} 
-					colors={[Colors.gradOrange1, Colors.gradOrange2]}
+					colors={mood}
 					start={[1, 0]}
 					end={[0, 1]}
 				>
-					<Text weight='bold' style={styles.cardTitle}>Op Reis</Text>
-					<Text style={styles.cardBody}>Leuke dingen gedaan vandaag</Text>
+					<Text weight='bold' style={styles.cardTitle}>{title}</Text>
+					<Text style={styles.cardBody}>{body}</Text>
 				</LinearGradient>
             </TouchableWithoutFeedback>
 		);
@@ -37,5 +39,3 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 	}
 });
-
-export default MoodCard;
