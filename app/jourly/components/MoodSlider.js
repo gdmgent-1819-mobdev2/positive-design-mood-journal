@@ -20,7 +20,7 @@ export class MoodSlider extends Component {
 					value={1}
 					disabled={false}
 					min={0}
-					max={100}
+					max={10}
 					onChange={(value: number) => {
 						console.log('CHANGE', value);
 					}}
@@ -28,14 +28,14 @@ export class MoodSlider extends Component {
 						console.log('COMPLETE', value);
 					}}
 					width={50}
-					height={300}
+					height={500}
 					step={1}
 					borderRadius={5}
-					minimumTrackTintColor={'gray'}
-					maximumTrackTintColor={'tomato'}
+					minimumTrackTintColor={Colors.lightGray}
+					maximumTrackTintColor={Colors.white}
 					showBallIndicator
-					ballIndicatorColor={'gray'}
-					ballIndicatorTextColor={'white'}
+					ballIndicatorColor={Colors.blue}
+					ballIndicatorTextColor={Colors.white}
 				/>
 			</LinearGradient>
 		);
