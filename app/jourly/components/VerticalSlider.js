@@ -249,7 +249,8 @@ const styles = StyleSheet.create({
 		fontWeight: '900'
 	},
 	container: {
-		overflow: 'hidden'
+		overflow: 'hidden',
+		flex: 1
 	},
 	slider: {
 		position: 'absolute',

@@ -17,14 +17,13 @@ export class MoodSlider extends Component {
 				end={[1, 1]}
 			>
 				<VerticalSlider
-					value={1}
-					disabled={false}
+					value={5} // current mood value here
 					min={0}
 					max={10}
-					onChange={(value: number) => {
+					onChange={value => {
 						console.log('CHANGE', value);
 					}}
-					onComplete={(value: number) => {
+					onComplete={value => {
 						console.log('COMPLETE', value);
 					}}
 					width={50}
@@ -37,6 +36,8 @@ export class MoodSlider extends Component {
 					ballIndicatorColor={Colors.blue}
 					ballIndicatorTextColor={Colors.white}
 				/>
+				{/* TODO: make this a tooltip displaying after 3 seconds or on button focused */}
+				<Text style={{ color: Colors.white }}>Press & Hold to continue</Text>
 			</LinearGradient>
 		);
 	}
