@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet, View, TouchableHighlight } from 'react-native';
 import JournalMoodEntry from './JournalMoodEntry';
 import JournalNoteEntry from './JournalNoteEntry';
 
@@ -9,6 +9,19 @@ export default class NewJournalEntry extends Component {
 		// 1. mood
 		// 2. note (plus optional location)
 		// 3. redirect to home
-		return <JournalMoodEntry />;
+		return (
+			<View style={styles.container}>
+				<JournalMoodEntry />
+				<TouchableHighlight onPress={() => this.props.navigation.navigate('AddEntry')}>
+					<Text weight='bold'>Next</Text>
+				</TouchableHighlight>
+			</View>
+		);
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+	}
+})

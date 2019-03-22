@@ -18,6 +18,7 @@ import SignUp from './screens/auth/SignUp';
 import Home from './screens/Home';
 import JournalEntries from './screens/JournalEntries';
 import NewJournalEntry from './screens/NewJournalEntry';
+import JournalNoteEntry from './screens/JournalNoteEntry';
 import JournalTimeline from './screens/JournalTimeline';
 import Settings from './screens/Settings';
 import { initFirebase } from './utils/firebase';
@@ -32,6 +33,9 @@ const AuthStack = createStackNavigator(
 		},
 		Home: {
 			screen: Home
+		},
+		AddEntry: {
+			screen: JournalNoteEntry,
 		}
 	},
 	{

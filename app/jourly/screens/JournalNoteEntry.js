@@ -7,8 +7,10 @@ import {
 	TextInput,
 	StyleSheet,
 	TouchableOpacity,
-	Text
+	Text,
+	View
 } from 'react-native';
+import IconButton from '../components/IconButton';
 import Colors from '../modules/Colors';
 
 export default class JournalNoteEntry extends Component {
@@ -16,8 +18,8 @@ export default class JournalNoteEntry extends Component {
 		super(props);
 
 		this.state = {
-			feelintTitle: '',
-			feelingText: ''
+			title: '',
+			text: '',
 		};
 	}
 	render() {
@@ -28,22 +30,30 @@ export default class JournalNoteEntry extends Component {
 				<TextInput
 					style={styles.title}
 					placeholder="Enter a title"
-					onChangeText={feelintTitle => this.setState({ feelintTitle })}
+					onChangeText={title => this.setState({ title })}
 				/>
 				{/* input field for the message of your mood*/}
 				<TextInput
 					style={styles.text}
 					placeholder="What's the matter?"
 					multiline={true}
-					onChangeText={feelingText => this.setState({ feelingText })}
+					onChangeText={text => this.setState({ text })}
 				/>
 				{/* button to save the message of the mood */}
-				{/* FIX ME: needs to be a round button with a checkmark*/}
-				<TouchableOpacity
-					onPress={() => this.props.navigation.navigate('Home')}
-				>
-					<Text style={{ textAlign: 'center' }}>Submit</Text>
-				</TouchableOpacity>
+				{/* FIX ME: Offset buttons so checkmark is centered */}
+				<View style={styles.buttonContainer}>
+					<IconButton 
+						icon={'md-camera'}
+						size={24}
+						color={Colors.white}
+					/>
+					<IconButton 
+						icon={'md-checkmark'}
+						size={32}
+						color={Colors.white}
+						onPress={() => this.props.navigation.navigate('Home')}
+					/>
+				</View>
 			</KeyboardAvoidingView>
 		);
 	}
@@ -52,27 +62,31 @@ export default class JournalNoteEntry extends Component {
 const styles = StyleSheet.create({
 	title: {
 		height: 60,
-		paddingLeft: 25,
-		margin: 10,
+		paddingHorizontal: 32,
 		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light',
 		fontSize: 28,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		backgroundColor: '#eee',
 	},
 	text: {
-		flex: 0.55,
-		paddingLeft: 25,
-		margin: 10,
+		flex: 1,
+		padding: 32,
+		textAlignVertical: 'top',
 		fontSize: 15,
 		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
 	},
 	container: {
 		flex: 1,
-		alignItems: 'stretch',
 		justifyContent: 'center',
 		flexDirection: 'column',
-		margin: 10,
 		backgroundColor: Colors.white
+	},
+	buttonContainer: {
+		height: 100,
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
 	}
 });
