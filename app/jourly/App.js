@@ -92,11 +92,19 @@ const AppStack = createBottomTabNavigator(
 			style: {
 				flex: 1 / 12,
 				paddingVertical: 5,
-				borderTopWidth: 0
+				borderTopWidth: 0,
+				shadowColor: "#000",
+				shadowOffset: {
+					width: 0,
+					height: 5,
+				},
+				shadowOpacity: 0.34,
+				shadowRadius: 6.27,
+
+				elevation: 10,
 			},
 			labelStyle: {
 				fontSize: 12,
-				lineHeight: 20
 			}
 		},
 		animationEnabled: true,

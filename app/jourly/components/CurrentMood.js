@@ -38,7 +38,7 @@ export default class CurrentMood extends Component {
 
 const styles = StyleSheet.create({
 	currentMoodContainer: {
-		flex: 0.5,
+		flex: 1,
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignContent: 'center',
