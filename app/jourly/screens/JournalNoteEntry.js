@@ -46,6 +46,7 @@ export default class JournalNoteEntry extends Component {
 						icon={'md-camera'}
 						size={24}
 						color={Colors.white}
+						onPress={() => this.props.navigation.navigate('CameraEntry')}
 					/>
 					<IconButton 
 						icon={'md-checkmark'}
