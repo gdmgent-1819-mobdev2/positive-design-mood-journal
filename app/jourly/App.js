@@ -17,7 +17,7 @@ import SignUp from './screens/auth/SignUp';
 // tabs
 import Home from './screens/Home';
 import JournalEntries from './screens/JournalEntries';
-import JournalEntry from './screens/JournalEntry';
+import NewJournalEntry from './screens/NewJournalEntry';
 import JournalTimeline from './screens/JournalTimeline';
 import Settings from './screens/Settings';
 import { initFirebase } from './utils/firebase';
@@ -55,8 +55,8 @@ const AppStack = createBottomTabNavigator(
 				tabBarIcon: ({ tintColor }) => <Ionicons name="md-albums" size={32} />
 			}
 		},
-		JournalEntry: {
-			screen: JournalEntry,
+		NewJournalEntry: {
+			screen: NewJournalEntry,
 			navigationOptions: {
 				tabBarLabel: 'Add entry',
 				tabBarIcon: ({ tintColor }) => <Ionicons name="md-add" size={32} />

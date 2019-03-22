@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import JournalMoodEntry from './JournalMoodEntry';
 import JournalNoteEntry from './JournalNoteEntry';
 
-export default class JournalEntry extends Component {
+export default class NewJournalEntry extends Component {
 	render() {
 		// TODO: router flow for adding note:
 		// 1. mood
