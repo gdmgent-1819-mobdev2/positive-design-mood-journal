@@ -9,6 +9,6 @@ export default class NewJournalEntry extends Component {
 		// 1. mood
 		// 2. note (plus optional location)
 		// 3. redirect to home
-		return <JournalNoteEntry />;
+		return <JournalMoodEntry />;
 	}
 }

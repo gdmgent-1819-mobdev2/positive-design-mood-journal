@@ -59,7 +59,8 @@ const AppStack = createBottomTabNavigator(
 			screen: NewJournalEntry,
 			navigationOptions: {
 				tabBarLabel: 'Add entry',
-				tabBarIcon: ({ tintColor }) => <Ionicons name="md-add" size={32} />
+				tabBarIcon: ({ tintColor }) => <Ionicons name="md-add" size={32} />,
+				tabBarVisible: false
 			}
 		},
 		JournalTimeline: {
