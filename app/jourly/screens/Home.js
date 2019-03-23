@@ -38,11 +38,11 @@ export default class Home extends Component {
 						<Text style={{fontSize: 18}}>View All</Text>
 					</View>
 					<ScrollView>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradBlue1, Colors.gradBlue2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradRed1, Colors.gradRed2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientOrange}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientBlue}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientRed}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientOrange}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientOrange}/>
 					</ScrollView>
 				</View>
 			</View>

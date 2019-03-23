@@ -1,4 +1,4 @@
-export default {
+const Colors = {
 	white: '#fff',
 	black: '#000',
 	green: '#23E3AC',
@@ -6,16 +6,12 @@ export default {
 	lightBlue: '#D1FFF2',
 	lightGray: '#EDF6F7',
 	darkGray: '#E3E3E3',
-	gradPurple1: '#7C62CC',
-	gradPurple2: '#6171CC',
-	gradBlue1: '#0099BF',
-	gradBlue2: '#43D2E8',
-	gradRed1: '#FA3A35',
-	gradRed2: '#FA6D35',
-	gradGreen1: '#23E3AD',
-	gradGreen2: '#22E37F',
-	gradOrange1: '#FFA21F',
-	gradOrange2: '#FFCB1F',
-	gradYellow1: '#FFC31F',
-	gradYellow2: '#FFF31E'
-};
+	gradientPurple: ['#7C62CC', '#6171CC'],
+	gradientBlue: ['#0099BF', '#43D2E8'],
+	gradientRed: ['#FA3A35', '#FA6D35'],
+	gradientGreen: ['#23E3AD', '#22E37F'],
+	gradientOrange: ['#FFA21F', '#FFCB1F'],
+	gradientYellow: ['#FFC31F', '#FFF31E'],
+}
+
+export default Colors;

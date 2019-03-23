@@ -18,15 +18,15 @@ export class JournalEntries extends Component {
 				<ScrollView>
 					<View>
 						<Text weight='bold' style={styles.title}>Today</Text>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradOrange1, Colors.gradOrange2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientOrange}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientOrange}/>
 					</View>
 					<View>
 						<Text weight='bold' style={styles.title}>Yesterday</Text>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradRed1, Colors.gradRed2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradRed1, Colors.gradRed2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradRed1, Colors.gradRed2]}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={[Colors.gradRed1, Colors.gradRed2]}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientRed}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientRed}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientRed}/>
+						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={Colors.gradientRed}/>
 					</View>
 				</ScrollView>
 			</View>

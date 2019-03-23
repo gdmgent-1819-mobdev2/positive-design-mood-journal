@@ -56,7 +56,7 @@ class SignIn extends Component {
 					onChangeText={password => this.setState({ password })}
 				/>
 				<GradientButton 
-					colors={[Colors.gradGreen1, Colors.gradGreen2]}
+					colors={Colors.gradientGreen}
 					startPos={[0, 1]}
 					endPos={[1, 0]}
 					text="LOG IN"

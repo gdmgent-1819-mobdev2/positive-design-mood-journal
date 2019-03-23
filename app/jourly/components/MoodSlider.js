@@ -11,7 +11,7 @@ export class MoodSlider extends Component {
 	render() {
 		return (
 			<LinearGradient
-				colors={[Colors.gradPurple1, Colors.gradPurple2]}
+				colors={Colors.gradientPurple}
 				style={styles.sliderContainer}
 				start={[0, 0]}
 				end={[1, 1]}

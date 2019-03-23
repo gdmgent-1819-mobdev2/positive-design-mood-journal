@@ -11,7 +11,7 @@ export default class IconButton extends Component {
     return (
       <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
         <LinearGradient
-            colors={[Colors.gradGreen1, Colors.gradGreen2]}
+            colors={Colors.gradientGreen}
             startPos={[0, 1]}
             endPos={[1, 0]}
             style={[styles.iconButton, {width: size * 2, height: size * 2}]}

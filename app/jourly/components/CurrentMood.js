@@ -4,10 +4,11 @@ import { LinearGradient } from 'expo';
 import Text from './FiraText';
 
 import Colors from '../modules/Colors';
+import Moods from '../modules/Moods';
 
 export default class CurrentMood extends Component {
 	state = {
-		moodRating: 0
+		rating: 1
 	};
 	getMood(rating) {
 		return moods[rating];
@@ -16,21 +17,23 @@ export default class CurrentMood extends Component {
 		this._component && this._component.setNativeProps(props);
 	};
 	render() {
+		const { rating } = this.state;
+
 		return (
 			<LinearGradient
-				colors={[Colors.gradOrange1, Colors.gradOrange2]}
+				colors={Moods[rating].color}
 				style={styles.currentMoodContainer}
 				start={[0, 0]}
 				end={[1, 1]}
 			>
-				<Text weight='bold' style={styles.subTitle}>Current Mood {this.state.moodRating}</Text>
+				<Text weight='bold' style={styles.subTitle}>Current Mood {rating}</Text>
 				{/* TODO: add animated svg */}
 				<Image 
 					style={styles.currentMoodImage}
-					source={require('../assets/moods/Happy.png')}
+					source={Moods[rating].image}
 				/>
 				<View style={styles.moodTitle}>
-					<Text weight='bold' style={styles.title}>Happy</Text>
+					<Text weight='bold' style={styles.title}>{Moods[rating].name}</Text>
 				</View>
 			</LinearGradient>
 		);
