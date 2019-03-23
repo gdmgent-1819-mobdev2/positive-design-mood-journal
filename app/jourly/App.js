@@ -27,7 +27,10 @@ import { initFirebase } from './utils/firebase';
 const AuthStack = createStackNavigator(
 	{
 		SignIn: {
-			screen: SignIn
+			screen: SignIn,
+			navigationOptions: {
+				header: null,
+			}
 		},
 		SignUp: {
 			screen: SignUp

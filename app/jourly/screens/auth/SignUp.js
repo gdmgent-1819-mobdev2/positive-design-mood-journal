@@ -49,20 +49,17 @@ class SignUp extends Component {
 				<View style={styles.imageContainer}>
 					<Logo />
 				</View>
-				<TextInput
-					style={styles.input}
+				<FormInput
 					placeholder="Email"
 					onChangeText={email => this.setState({ email })}
 				/>
-				<TextInput
+				<FormInput
 					secureTextEntry={true}
-					style={styles.input}
 					placeholder="Password"
 					onChangeText={password => this.setState({ password })}
 				/>
-				<TextInput
+				<FormInput
 					secureTextEntry={true}
-					style={styles.input}
 					placeholder="Repeat Password"
 					onChangeText={passwordRepeat => this.setState({ passwordRepeat })}
 				/>
@@ -84,15 +81,6 @@ class SignUp extends Component {
 export default SignUp;
 
 const styles = StyleSheet.create({
-	input: {
-		height: 60,
-		paddingLeft: 25,
-		margin: 10,
-		borderRadius: 75,
-		backgroundColor: Colors.lightGray,
-		// FIXME: check if possible to set default font family globally?
-		fontFamily: 'fira-sans-light'
-	},
 	imageContainer: {
 		height: 150,
 		justifyContent: 'center',

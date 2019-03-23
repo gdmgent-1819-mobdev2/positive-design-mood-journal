@@ -46,14 +46,12 @@ class SignIn extends Component {
 				<View style={styles.imageContainer}>
 					<Logo />
 				</View>
-				<TextInput
-					style={styles.input}
+				<FormInput
 					placeholder="Email"
 					onChangeText={email => this.setState({ email })}
 				/>
-				<TextInput
+				<FormInput
 					secureTextEntry={true}
-					style={styles.input}
 					placeholder="Password"
 					onChangeText={password => this.setState({ password })}
 				/>
@@ -61,7 +59,8 @@ class SignIn extends Component {
 					colors={[Colors.gradGreen1, Colors.gradGreen2]}
 					startPos={[0, 1]}
 					endPos={[1, 0]}
-					text="Sign in"
+					text="LOG IN"
+					textStyle={{color: Colors.white}}
 					onPress={() => this.onSignIn()}
 				/>
 				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
@@ -75,26 +74,18 @@ class SignIn extends Component {
 export default SignIn;
 
 const styles = StyleSheet.create({
-	input: {
-		height: 60,
-		paddingLeft: 25,
-		margin: 10,
-		borderRadius: 75,
-		backgroundColor: Colors.lightGray,
-		// FIXME: check if possible to set default font family globally?
-		fontFamily: 'fira-sans-light'
-	},
 	imageContainer: {
 		height: 150,
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginBottom: 16,
 	},
 	container: {
 		flex: 1,
 		alignItems: 'stretch',
 		justifyContent: 'center',
 		flexDirection: 'column',
-		margin: 10,
+		margin: 16,
 		backgroundColor: Colors.white,
 	},
 });

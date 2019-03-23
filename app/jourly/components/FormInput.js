@@ -29,7 +29,6 @@ class FormInput extends Component {
 			<TextInput
 				style={styles.textInput}
 				selectionColor={Colors.gradGreen1}
-				underlineColorAndroid={isFocused ? Colors.gradGreen2 : Colors.white}
 				onFocus={this.handleFocus}
 				onBlur={this.handleBlur}
 				{...otherProps}
@@ -42,11 +41,9 @@ export default FormInput;
 
 const styles = StyleSheet.create({
 	textInput: {
-		height: 40,
-		padding: 20,
-		flex: 1 / 24,
+		height: 50,
+		paddingLeft: 25,
 		margin: 10,
-		flexDirection: 'row',
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
 		// FIXME: check if possible to set default font family globally?

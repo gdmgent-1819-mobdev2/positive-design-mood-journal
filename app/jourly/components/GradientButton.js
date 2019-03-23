@@ -5,7 +5,7 @@ import Text from '../components/FiraText';
 
 export default class GradientButton extends Component {
   render() {
-    const { colors, startPos, endPos, text, onPress } = this.props;
+    const { colors, startPos, endPos, text, textStyle, onPress } = this.props;
 
     return (
         <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
@@ -15,7 +15,7 @@ export default class GradientButton extends Component {
                 start={startPos}
                 end={endPos}
             >
-                <Text weight={'bold'}>{text}</Text>
+                <Text weight={'bold'} style={[textStyle, styles.btnText]}>{text}</Text>
             </LinearGradient>
         </TouchableOpacity>
     )
@@ -24,10 +24,14 @@ export default class GradientButton extends Component {
 
 const styles = StyleSheet.create({
     btnContainer: {
-        height: 60,
+        height: 50,
         margin: 10,
         borderRadius: 75,
         justifyContent: 'center',
 		alignItems: 'center',
     },
+    btnText: {
+        fontSize: 16,
+        letterSpacing: 1,
+    }
 });
