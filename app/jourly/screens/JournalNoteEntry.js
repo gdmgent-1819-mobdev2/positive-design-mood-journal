@@ -13,6 +13,8 @@ import {
 import IconButton from '../components/IconButton';
 import Colors from '../modules/Colors';
 
+import firebase from 'firebase';
+
 export default class JournalNoteEntry extends Component {
 	constructor(props) {
 		super(props);
@@ -20,8 +22,31 @@ export default class JournalNoteEntry extends Component {
 		this.state = {
 			title: '',
 			text: '',
+			uid: '',
 		};
 	}
+
+	componentDidMount() {
+		firebase.auth().onAuthStateChanged((user) => {
+			if (user) this.setState({ uid: user.uid }) 
+		})
+	}
+
+	/* TODO: Add mood to note data, so we can determine which type / color card it is */
+	async addNewNote() {
+		const post = {
+			title: this.state.title,
+			text: this.state.text
+		};
+
+		await firebase.database().ref('notes/' + this.state.uid + '/').push(post);
+	}
+
+	onSubmit() {
+		this.addNewNote();
+		this.props.navigation.navigate('Home');
+	}
+
 	render() {
 		return (
 			<KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -52,7 +77,7 @@ export default class JournalNoteEntry extends Component {
 						icon={'md-checkmark'}
 						size={32}
 						color={Colors.white}
-						onPress={() => this.props.navigation.navigate('Home')}
+						onPress={this.onSubmit.bind(this)}
 					/>
 				</View>
 			</KeyboardAvoidingView>

@@ -32,22 +32,24 @@ const AuthStack = createStackNavigator(
 		SignUp: {
 			screen: SignUp
 		},
-		Home: {
-			screen: Home
-		},
 		AddEntry: {
 			screen: JournalNoteEntry,
+			navigationOptions: {
+				title: 'New Entry'
+			}
 		},
 		CameraEntry: {
 			screen: JounralImageEntry,
 			navigationOptions: {
 				header: null,
 			}
-		}
+		},
 	},
 	{
-		initialRouteName: 'SignIn'
-	}
+		initialRouteName: 'SignIn',
+		headerLayoutPreset: 'center'
+	},
+	
 );
 
 const AppStack = createBottomTabNavigator(

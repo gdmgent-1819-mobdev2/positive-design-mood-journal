@@ -6,8 +6,11 @@ import Colors from '../modules/Colors';
 import CurrentMood from '../components/CurrentMood';
 import MoodCard from '../components/MoodCard';
 
+import firebase from 'firebase';
+
 export default class Home extends Component {
 	state = {};
+
 	render() {
 		return (
 			<View style={styles.container}>
