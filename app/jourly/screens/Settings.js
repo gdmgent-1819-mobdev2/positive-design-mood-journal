@@ -41,7 +41,7 @@ class Settings extends Component {
 		return (
 			<View style={styles.container}>
 				<View style={styles.header}>
-					<Text weight={'bold'} style={styles.title}>Settings</Text>
+					<Text weight={'bold'} style={styles.title}>{ user ? user.email : 'Settings' }</Text>
 				</View>
 					<View style={styles.settingContainer}>
 					<TouchableWithoutFeedback>

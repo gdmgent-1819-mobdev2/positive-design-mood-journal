@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 import { LinearGradient } from 'expo';
-import { Svg } from 'react-native-svg';
 import Text from './FiraText';
 
 import Colors from '../modules/Colors';
@@ -19,18 +18,20 @@ export default class CurrentMood extends Component {
 	render() {
 		return (
 			<LinearGradient
-				colors={[Colors.gradPurple1, Colors.gradPurple2]}
+				colors={[Colors.gradOrange1, Colors.gradOrange2]}
 				style={styles.currentMoodContainer}
 				start={[0, 0]}
 				end={[1, 1]}
 			>
-				<Text>Current Mood</Text>
-				<Text>{this.state.moodRating}</Text>
+				<Text weight='bold' style={styles.subTitle}>Current Mood {this.state.moodRating}</Text>
 				{/* TODO: add animated svg */}
-				<Svg style={styles.emoticon}>
-					<Svg.Circle cx={50} cy={50} r={45} fill={Colors.white} />
-				</Svg>
-				<Text style={styles.text}>Home</Text>
+				<Image 
+					style={styles.currentMoodImage}
+					source={require('../assets/moods/Happy.png')}
+				/>
+				<View style={styles.moodTitle}>
+					<Text weight='bold' style={styles.title}>Happy</Text>
+				</View>
 			</LinearGradient>
 		);
 	}
@@ -45,11 +46,22 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	currentMoodImage: {
-		justifyContent: 'center',
-		alignContent: 'center'
+		width: 130,
+		height: 130,
 	},
-	emoticon: {
-		width: 100,
-		height: 100
+	subTitle: {
+		color: Colors.white,
+		fontSize: 18,
+		marginBottom: 8,
+	},	
+	moodTitle: {
+		position: 'absolute',
+		bottom: 10,
+	},	
+	title: {
+		color: Colors.white,
+		fontSize: 50,
+		marginBottom: 18,
+		letterSpacing: 1,
 	}
 });

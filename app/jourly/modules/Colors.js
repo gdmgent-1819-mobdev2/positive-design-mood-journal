@@ -5,7 +5,7 @@ export default {
 	blue: '#4DD4E9',
 	lightBlue: '#D1FFF2',
 	lightGray: '#EDF6F7',
-	darkGray: '#575757',
+	darkGray: '#E3E3E3',
 	gradPurple1: '#7C62CC',
 	gradPurple2: '#6171CC',
 	gradBlue1: '#0099BF',

@@ -67,11 +67,12 @@ class SignUp extends Component {
 					colors={[Colors.gradGreen1, Colors.gradGreen2]}
 					startPos={[0, 1]}
 					endPos={[1, 0]}
-					text="Sign Up"
+					text="REGISTER"
+					textStyle={{color: Colors.white}}
 					onPress={() => this.onSignUp()}
 				/>
 				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignIn')}>
-					<Text style={{textAlign: 'center'}}>Sign In</Text>
+					<Text style={{textAlign: 'center'}}>Log In</Text>
 				</TouchableOpacity>
 			</KeyboardAvoidingView>
 		);
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
 		height: 150,
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginBottom: 16,
 	},
 	container: {
 		flex: 1,

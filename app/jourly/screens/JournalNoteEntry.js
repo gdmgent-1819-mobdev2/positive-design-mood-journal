@@ -33,21 +33,23 @@ export default class JournalNoteEntry extends Component {
 	}
 
 	/* TODO: Add mood to note data, so we can determine which type / color card it is */
-	async addNewNote(post) {
-		if (post.title === '' || post.text === '') {
+	async addNewNote(note) {
+		if (note.title === '' || note.text === '') {
 			alert('Make sure the inputs are not empty');
 		} else {
-			await firebase.database().ref('notes/' + this.state.uid).push(post);
+			await firebase.database().ref('notes/' + this.state.uid).push(note);
 		}
 	}
 
 	onSubmit() {
-		const post = {
+		const note = {
 			title: this.state.title,
-			text: this.state.text
+			text: this.state.text,
+			mood: 10,
+			created_at: new Date().getTime(),
 		};
 
-		this.addNewNote(post);
+		this.addNewNote(note);
 		this.props.navigation.navigate('Home');
 	}
 

@@ -46,7 +46,6 @@ export default class Home extends Component {
 					</ScrollView>
 				</View>
 			</View>
-			// TODO: add bottom nav bar here
 		);
 	}
 }
