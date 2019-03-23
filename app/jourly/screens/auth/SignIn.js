@@ -5,13 +5,17 @@ import {
 	Button,
 	StyleSheet,
 	Picker,
-	TouchableOpacity
+	TouchableOpacity,
+	Image,
+	View,
+	Dimensions
 } from 'react-native';
 
 import Colors from '../../modules/Colors';
 import Text from '../../components/FiraText';
 import FormInput from '../../components/FormInput';
 import GradientButton from '../../components/GradientButton';
+import Logo from '../../components/Logo';
 import firebase from 'firebase';
 
 class SignIn extends Component {
@@ -36,9 +40,12 @@ class SignIn extends Component {
 	}
 
 	render() {
+
 		return (
 		    <KeyboardAvoidingView style={styles.container} behavior="padding">
-				{/* TODO: add image */}
+				<View style={styles.imageContainer}>
+					<Logo />
+				</View>
 				<TextInput
 					style={styles.input}
 					placeholder="Email"
@@ -76,6 +83,11 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.lightGray,
 		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
+	},
+	imageContainer: {
+		height: 150,
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 	container: {
 		flex: 1,

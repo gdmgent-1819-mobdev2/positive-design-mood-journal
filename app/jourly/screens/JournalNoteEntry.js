@@ -22,7 +22,7 @@ export default class JournalNoteEntry extends Component {
 		this.state = {
 			title: '',
 			text: '',
-			uid: '',
+			uid: null,
 		};
 	}
 
@@ -33,17 +33,21 @@ export default class JournalNoteEntry extends Component {
 	}
 
 	/* TODO: Add mood to note data, so we can determine which type / color card it is */
-	async addNewNote() {
+	async addNewNote(post) {
+		if (post.title === '' || post.text === '') {
+			alert('Make sure the inputs are not empty');
+		} else {
+			await firebase.database().ref('notes/' + this.state.uid).push(post);
+		}
+	}
+
+	onSubmit() {
 		const post = {
 			title: this.state.title,
 			text: this.state.text
 		};
 
-		await firebase.database().ref('notes/' + this.state.uid + '/').push(post);
-	}
-
-	onSubmit() {
-		this.addNewNote();
+		this.addNewNote(post);
 		this.props.navigation.navigate('Home');
 	}
 

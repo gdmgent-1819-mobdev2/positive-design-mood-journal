@@ -9,7 +9,22 @@ import MoodCard from '../components/MoodCard';
 import firebase from 'firebase';
 
 export default class Home extends Component {
-	state = {};
+	state = {
+		posts: [],
+		uid: null,
+	};
+
+	componentDidMount() {
+		firebase.auth().onAuthStateChanged(user => {
+			if (user) this.setState({ uid: user.uid });
+		});
+	}
+
+	getUserNotes() {
+		firebase.database().ref('notes').on('value', snapshot => {
+			console.log(snapshot);
+		});
+	}
 
 	render() {
 		return (

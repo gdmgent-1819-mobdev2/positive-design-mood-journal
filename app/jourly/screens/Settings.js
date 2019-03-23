@@ -1,28 +1,72 @@
 // change settings for the app - notifications, location, emailadress, extra: password, toggle 2FA
 import React, { Component } from 'react';
-import { View, Picker, TextInput, StyleSheet } from 'react-native';
+import { View, Picker, TextInput, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
-// import this as component Text instead of Text component from 'react-native'
 import Text from '../components/FiraText';
+import Colors from '../modules/Colors';
+
+import firebase from 'firebase';
 
 class Settings extends Component {
 	state = {
-		locationEnabled: false
+		locationEnabled: false,
+		user: null,
 	};
+
+	componentDidMount() {
+		this.getCurrentUser();
+	}
+
+	getCurrentUser() {
+		firebase.auth().onAuthStateChanged(user => {
+			if (user) { 
+				this.setState({ user: user }) 
+			}
+		})
+	}
+
+	/* TODO: Make cleaner */
+	async signOut() {
+		try {
+			await firebase.auth().signOut();
+			this.props.navigation.navigate('SignIn');
+		} catch (err) {
+			console.log(err);
+		}	
+	}
+
 	render() {
+		const { user } = this.state;
+
 		return (
 			<View style={styles.container}>
-				<Text weight={'bold'}>Settings</Text>
-				<Picker
-					selectedValue={this.state.locationEnabled}
-					style={{ height: 50, width: 100 }}
-					onValueChange={(itemValue, itemIndex) =>
-						this.setState({ language: itemValue })
-					}
-				>
-					<Picker.Item label="locationEnabled" value="Use my location" />
-					<Picker.Item label="locationDisabled" value="Disable location" />
-				</Picker>
+				<View style={styles.header}>
+					<Text weight={'bold'} style={styles.title}>Settings</Text>
+				</View>
+					<View style={styles.settingContainer}>
+					<TouchableWithoutFeedback>
+						<View style={styles.setting}>
+							<Text weight={'bold'} style={styles.settingTitle}>Edit Account</Text>
+							<Text weight={'bold'}>Change your display name</Text>
+						</View>
+					</TouchableWithoutFeedback>
+					<TouchableWithoutFeedback onPress={this.signOut.bind(this)}>
+						<View style={styles.setting}>
+							<Text weight={'bold'} style={styles.settingTitle}>Log Out</Text>
+							<Text weight={'bold'}>Log out of your current account</Text>
+						</View>
+					</TouchableWithoutFeedback>
+					<Picker
+						selectedValue={this.state.locationEnabled}
+						style={{ height: 50, width: 100 }}
+						onValueChange={(itemValue, itemIndex) =>
+							this.setState({ language: itemValue })
+						}
+					>
+						<Picker.Item label="locationEnabled" value="Use my location" />
+						<Picker.Item label="locationDisabled" value="Disable location" />
+					</Picker>
+				</View>
 			</View>
 		);
 	}
@@ -30,13 +74,31 @@ class Settings extends Component {
 
 export default Settings;
 
+/* TODO: Fix styling */
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		margin: 10,
+		marginHorizontal: 32,
+		paddingTop: 32,
 		flexDirection: 'column',
-		backgroundColor: '#fff',
-		alignItems: 'stretch',
-		justifyContent: 'center'
+	},
+	title: {
+		fontSize: 32,
+	},
+	header: {
+		height: 100,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	settingContainer: {
+		flex: 1,
+	},
+	setting: {
+		paddingVertical: 24,
+		borderBottomColor: Colors.lightGray,
+		borderBottomWidth: 2,
+	},
+	settingTitle: {
+		fontSize: 20,
 	}
 });
