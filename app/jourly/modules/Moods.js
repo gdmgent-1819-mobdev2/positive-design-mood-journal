@@ -21,6 +21,46 @@ const Moods = [
         color: Colors.gradientOrange
     },
     {
+        name: 'Love',
+        image: require('../assets/moods/Love.png'),
+        color: Colors.gradientYellow
+    },
+    {
+        name: 'Angry',
+        image: require('../assets/moods/Angry.png'),
+        color: Colors.gradientRed
+    },
+    {
+        name: 'Calm',
+        image: require('../assets/moods/Calm.png'),
+        color: Colors.gradientBlue
+    },
+    {
+        name: 'Confused',
+        image: require('../assets/moods/Confused.png'),
+        color: Colors.gradientPurple
+    },
+    {
+        name: 'Cool',
+        image: require('../assets/moods/Cool.png'),
+        color: Colors.gradientGreen
+    },
+    {
+        name: 'Crying',
+        image: require('../assets/moods/Crying.png'),
+        color: Colors.gradientBlue
+    },
+    {
+        name: 'Nervous',
+        image: require('../assets/moods/Nervous.png'),
+        color: Colors.gradientPurple
+    },
+    {
+        name: 'Surprised',
+        image: require('../assets/moods/Surprised.png'),
+        color: Colors.gradientGreen
+    },
+    {
         name: 'Sad',
         image: require('../assets/moods/Sad.png'),
         color: Colors.gradientBlue
