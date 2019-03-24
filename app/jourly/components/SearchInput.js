@@ -4,9 +4,13 @@ import Colors from '../modules/Colors'
 
 export default class SearchInput extends Component {
     render() {
+        const { onChangeText, value } = this.props;
+        
         return (
             <TextInput
                 style={styles.searchInput}
+                onChangeText={onChangeText}
+                value={value}
             />
         )
     }

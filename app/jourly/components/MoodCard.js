@@ -3,15 +3,16 @@ import { View, StyleSheet, TouchableWithoutFeedback, TouchableOpacity } from 're
 import Text from './FiraText';
 import { LinearGradient } from 'expo';
 import Colors from '../modules/Colors';
+import Moods from '../modules/Moods';
 
 export default class MoodCard extends Component {
 	render() {
 		const { mood, title, body } = this.props;
-
+		
 		return (
             <TouchableWithoutFeedback>
 				<LinearGradient style={styles.card} 
-					colors={mood}
+					colors={Moods[mood].color}
 					start={[1, 0]}
 					end={[0, 1]}
 				>
