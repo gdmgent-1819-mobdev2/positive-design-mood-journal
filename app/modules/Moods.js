@@ -16,38 +16,18 @@ import Colors from './Colors';
 
 const Moods = [
     {
-        name: 'Happy',
-        image: require('../assets/moods/Happy.png'),
-        color: Colors.gradientOrange
-    },
-    {
-        name: 'Love',
-        image: require('../assets/moods/Love.png'),
-        color: Colors.gradientYellow
-    },
-    {
         name: 'Angry',
         image: require('../assets/moods/Angry.png'),
         color: Colors.gradientRed
     },
     {
-        name: 'Calm',
-        image: require('../assets/moods/Calm.png'),
-        color: Colors.gradientBlue
-    },
-    {
-        name: 'Confused',
-        image: require('../assets/moods/Confused.png'),
-        color: Colors.gradientPurple
-    },
-    {
-        name: 'Cool',
-        image: require('../assets/moods/Cool.png'),
-        color: Colors.gradientGreen
-    },
-    {
         name: 'Crying',
         image: require('../assets/moods/Crying.png'),
+        color: Colors.gradientDarkBlue
+    },
+    {
+        name: 'Sad',
+        image: require('../assets/moods/Sad.png'),
         color: Colors.gradientBlue
     },
     {
@@ -58,13 +38,33 @@ const Moods = [
     {
         name: 'Surprised',
         image: require('../assets/moods/Surprised.png'),
+        color: Colors.gradientLightGreen
+    },
+    {
+        name: 'Confused',
+        image: require('../assets/moods/Confused.png'),
+        color: Colors.gradientLightBlue
+    },
+    {
+        name: 'Calm',
+        image: require('../assets/moods/Calm.png'),
+        color: Colors.gradientPink
+    },
+    {
+        name: 'Cool',
+        image: require('../assets/moods/Cool.png'),
         color: Colors.gradientGreen
     },
     {
-        name: 'Sad',
-        image: require('../assets/moods/Sad.png'),
-        color: Colors.gradientBlue
+        name: 'Happy',
+        image: require('../assets/moods/Happy.png'),
+        color: Colors.gradientOrange
     },
+    {
+        name: 'Love',
+        image: require('../assets/moods/Love.png'),
+        color: Colors.gradientYellow
+    },    
 ];
 
 export default Moods;

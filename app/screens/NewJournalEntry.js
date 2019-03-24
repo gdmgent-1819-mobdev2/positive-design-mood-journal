@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableOpacity, AsyncStorage } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, TouchableHighlight, AsyncStorage } from 'react-native';
 import { LinearGradient } from 'expo';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
@@ -35,7 +35,9 @@ export default class NewJournalEntry extends Component {
 					end={[1, 1]}
 				>
 				<View style={styles.pageHeader}>
-					<Ionicons name={'md-arrow-back'} size={32} color={Colors.white} />
+					<TouchableHighlight onPress={() => this.props.navigation.navigate('Home')}>
+						<Ionicons name={'md-arrow-back'} size={32} color={Colors.white} />
+					</TouchableHighlight>
 					<Text weight='bold' style={{ color: Colors.white, marginLeft: 20, fontSize: 24, textAlign: 'center' }}>How are you feeling today?</Text>
 				</View>
 					<MoodSlider 
