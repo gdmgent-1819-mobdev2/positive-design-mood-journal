@@ -38,7 +38,7 @@ export class JournalEntries extends Component {
 
 	async getUserNotes() {
 		try {
-			const ref = firebase.database().ref('notes/' + this.state.uid);
+			const ref = await firebase.database().ref('notes/' + this.state.uid);
 			ref.once('value').then((snapshot) => {
 				this.setState({ 
 					isLoading: false,
@@ -54,17 +54,17 @@ export class JournalEntries extends Component {
 	renderNotes() {
 		const { notes } = this.state;
 		const keys = [];
-		const fields = [];
+		const cards = [];
 
 		Object.keys(notes).map(key => keys.push(key));
 
 		Object.values(notes).map((note, index) => {
-			fields.push(
-				<MoodCard key={keys[index]}title={note.title} body={note.text} mood={note.mood}/>
+			cards.push(
+				<MoodCard key={keys[index]} title={note.title} body={note.text} mood={note.mood}/>
 			);
 		})
 
-		return fields;
+		return cards;
 	}
 
 	render() {		
@@ -74,7 +74,7 @@ export class JournalEntries extends Component {
 			return (
 				<View style={styles.container}>
 					<SearchInput 
-						onChangeText={val => this.updateSearch(val)}qsd
+						onChangeText={val => this.updateSearch(val)}
 						value={this.state.searchValue}
 					/>
 					<ScrollView>
