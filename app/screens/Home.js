@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Button, Image, StyleSheet } from 'react-native';
+import {
+	ScrollView,
+	View,
+	Button,
+	Image,
+	StyleSheet,
+	TouchableOpacity
+} from 'react-native';
 import Text from '../components/FiraText';
 import Colors from '../modules/Colors';
 
@@ -11,7 +18,7 @@ import firebase from 'firebase';
 export default class Home extends Component {
 	state = {
 		posts: [],
-		uid: null,
+		uid: null
 	};
 
 	componentDidMount() {
@@ -21,9 +28,12 @@ export default class Home extends Component {
 	}
 
 	getUserNotes() {
-		firebase.database().ref('notes').on('value', snapshot => {
-			console.log(snapshot);
-		});
+		firebase
+			.database()
+			.ref('notes')
+			.on('value', snapshot => {
+				console.log(snapshot);
+			});
 	}
 
 	render() {
@@ -34,15 +44,41 @@ export default class Home extends Component {
 				</View>
 				<View style={styles.cardContainer}>
 					<View style={styles.titleContainer}>
-						<Text weight='bold' style={{fontSize: 24}}>Recent Notes</Text>
-						<Text style={{fontSize: 18}}>View All</Text>
+						<Text weight="bold" style={{ fontSize: 24 }}>
+							Recent Notes
+						</Text>
+						<TouchableOpacity
+							onPress={() => this.props.navigation.navigate('JournalEntries')}
+						>
+							<Text style={{ fontSize: 18 }}>View All</Text>
+						</TouchableOpacity>
 					</View>
 					<ScrollView>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={1}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={2}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={7}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={6}/>
-						<MoodCard title={'Op Reis'} body={'Leuke dingen gedaan vandaag'} mood={8}/>
+						<MoodCard
+							title={'Op Reis'}
+							body={'Leuke dingen gedaan vandaag'}
+							mood={1}
+						/>
+						<MoodCard
+							title={'Op Reis'}
+							body={'Leuke dingen gedaan vandaag'}
+							mood={2}
+						/>
+						<MoodCard
+							title={'Op Reis'}
+							body={'Leuke dingen gedaan vandaag'}
+							mood={7}
+						/>
+						<MoodCard
+							title={'Op Reis'}
+							body={'Leuke dingen gedaan vandaag'}
+							mood={6}
+						/>
+						<MoodCard
+							title={'Op Reis'}
+							body={'Leuke dingen gedaan vandaag'}
+							mood={8}
+						/>
 					</ScrollView>
 				</View>
 			</View>
@@ -52,16 +88,16 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		flex: 1
 	},
 	titleContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'flex-end',
-		marginBottom: 16,
+		marginBottom: 16
 	},
 	moodContainer: {
-		flex: 0.8,
+		flex: 0.8
 	},
 	cardContainer: {
 		flex: 1,

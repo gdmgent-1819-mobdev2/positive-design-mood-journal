@@ -11,6 +11,7 @@ export class MoodSlider extends Component {
 
 		return (
 			<VerticalSlider
+				style={styles.sliderContainer}
 				value={currentMood} // current mood value here
 				min={0}
 				max={9}

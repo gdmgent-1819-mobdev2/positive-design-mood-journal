@@ -26,14 +26,15 @@ export default class CurrentMood extends Component {
 				start={[0, 0]}
 				end={[1, 1]}
 			>
-				<Text weight='bold' style={styles.subTitle}>Current Mood {rating}</Text>
+				<Text weight="bold" style={styles.subTitle}>
+					Current Mood
+				</Text>
 				{/* TODO: add animated svg */}
-				<Image 
-					style={styles.currentMoodImage}
-					source={Moods[rating].image}
-				/>
+				<Image style={styles.currentMoodImage} source={Moods[rating].image} />
 				<View style={styles.moodTitle}>
-					<Text weight='bold' style={styles.title}>{Moods[rating].name}</Text>
+					<Text weight="bold" style={styles.title}>
+						{Moods[rating].name}
+					</Text>
 				</View>
 			</LinearGradient>
 		);
@@ -50,21 +51,21 @@ const styles = StyleSheet.create({
 	},
 	currentMoodImage: {
 		width: 130,
-		height: 130,
+		height: 130
 	},
 	subTitle: {
 		color: Colors.white,
 		fontSize: 18,
-		marginBottom: 8,
-	},	
+		marginBottom: 8
+	},
 	moodTitle: {
 		position: 'absolute',
-		bottom: 10,
-	},	
+		bottom: 10
+	},
 	title: {
 		color: Colors.white,
 		fontSize: 50,
 		marginBottom: 18,
-		letterSpacing: 1,
+		letterSpacing: 1
 	}
 });

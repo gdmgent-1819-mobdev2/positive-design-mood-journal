@@ -29,34 +29,33 @@ const AuthStack = createStackNavigator(
 		SignIn: {
 			screen: SignIn,
 			navigationOptions: {
-				header: null,
+				header: null
 			}
 		},
 		SignUp: {
 			screen: SignUp,
 			navigationOptions: {
-				header: null,
+				header: null
 			}
 		},
 		AddEntry: {
 			screen: JournalNoteEntry,
 			navigationOptions: {
 				title: 'New Entry',
-				header: null,
+				header: null
 			}
 		},
 		CameraEntry: {
 			screen: JournalImageEntry,
 			navigationOptions: {
-				header: null,
+				header: null
 			}
-		},
+		}
 	},
 	{
 		initialRouteName: 'SignIn',
 		headerLayoutPreset: 'center'
-	},
-	
+	}
 );
 
 const AppStack = createBottomTabNavigator(
@@ -65,21 +64,27 @@ const AppStack = createBottomTabNavigator(
 			screen: Home,
 			navigationOptions: {
 				tabBarLabel: 'Home',
-				tabBarIcon: ({ tintColor }) => <Ionicons name="md-home" size={32} color={tintColor} />
+				tabBarIcon: ({ tintColor }) => (
+					<Ionicons name="md-home" size={32} color={tintColor} />
+				)
 			}
 		},
 		JournalEntries: {
 			screen: JournalEntries,
 			navigationOptions: {
 				tabBarLabel: 'Entries',
-				tabBarIcon: ({ tintColor }) => <Ionicons name="md-albums" size={32} color={tintColor} />
+				tabBarIcon: ({ tintColor }) => (
+					<Ionicons name="md-albums" size={32} color={tintColor} />
+				)
 			}
 		},
 		NewJournalEntry: {
 			screen: NewJournalEntry,
 			navigationOptions: {
 				tabBarLabel: 'Add entry',
-				tabBarIcon: ({ tintColor }) => <Ionicons name="md-add" size={32} color={tintColor} />,
+				tabBarIcon: ({ tintColor }) => (
+					<Ionicons name="md-add" size={32} color={tintColor} />
+				),
 				tabBarVisible: false
 			}
 		},
@@ -96,7 +101,9 @@ const AppStack = createBottomTabNavigator(
 			screen: Settings,
 			navigationOptions: {
 				tabBarLabel: 'Options',
-				tabBarIcon: ({ tintColor }) => <Ionicons name="md-settings" size={32} color={tintColor} />
+				tabBarIcon: ({ tintColor }) => (
+					<Ionicons name="md-settings" size={32} color={tintColor} />
+				)
 			}
 		}
 	},
@@ -114,22 +121,20 @@ const AppStack = createBottomTabNavigator(
 				flex: 1 / 12,
 				paddingVertical: 5,
 				borderTopWidth: 0,
-				shadowColor: "#000",
+				shadowColor: '#000',
 				shadowOffset: {
 					width: 0,
-					height: 5,
+					height: 5
 				},
 				shadowOpacity: 0.34,
 				shadowRadius: 6.27,
 
-				elevation: 10,
+				elevation: 10
 			},
 			labelStyle: {
-				fontSize: 12,
+				fontSize: 12
 			}
-		},
-		animationEnabled: true,
-		swipeEnabled: true
+		}
 	}
 );
 
