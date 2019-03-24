@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet, Image, View, AsyncStorage } from 'react-native';
 import { LinearGradient } from 'expo';
 import Text from './FiraText';
 
@@ -8,14 +8,32 @@ import Moods from '../modules/Moods';
 
 export default class CurrentMood extends Component {
 	state = {
-		rating: 0
+		rating: 8,
+		isLoading: true,
 	};
-	getMood(rating) {
-		return moods[rating];
+
+	componentDidMount() {
+		this.retrieveMoodRating();
 	}
+
+	async retrieveMoodRating() {
+		try {
+			const rating = await AsyncStorage.getItem('mood');
+			if (rating !== null) {
+				this.setState({ 
+					rating,
+					isLoading: false,
+				 })
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	setNativeProps = props => {
 		this._component && this._component.setNativeProps(props);
 	};
+
 	render() {
 		const { rating } = this.state;
 
