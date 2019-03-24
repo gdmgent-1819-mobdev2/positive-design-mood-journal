@@ -23,9 +23,9 @@
 
 ## functionality:
 
-- Authentication
-- Set Mood 
-- Make notes
+- Create an Account
+- Set your Current Mood 
+- Write notes in your digital journal
 
 ## Test User: 
 
