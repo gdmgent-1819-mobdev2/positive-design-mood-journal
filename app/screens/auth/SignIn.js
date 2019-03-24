@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import {
 	KeyboardAvoidingView,
-	TextInput,
-	Button,
 	StyleSheet,
-	Picker,
 	TouchableOpacity,
-	Image,
-	View,
-	Dimensions
+	View
 } from 'react-native';
 
 import Colors from '../../modules/Colors';
@@ -21,28 +16,27 @@ import firebase from 'firebase';
 class SignIn extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			email: '',
-			password: '',
-		}
+			password: ''
+		};
 	}
 
 	async onSignIn() {
 		const { email, password } = this.state;
 
-		await firebase.auth()
+		await firebase
+			.auth()
 			.signInWithEmailAndPassword(email, password)
 			//if succesfull register, the user will be redirected to the home page
 			.then(() => this.props.navigation.navigate('Home'))
 			//every error is shown to the user through an alert
-			.catch((err) => alert(err));
+			.catch(err => alert(err));
 	}
 
 	render() {
-
 		return (
-		    <KeyboardAvoidingView style={styles.container} behavior="padding">
+			<KeyboardAvoidingView style={styles.container} behavior="padding">
 				<View style={styles.imageContainer}>
 					<Logo />
 				</View>
@@ -55,16 +49,18 @@ class SignIn extends Component {
 					placeholder="Password"
 					onChangeText={password => this.setState({ password })}
 				/>
-				<GradientButton 
+				<GradientButton
 					colors={Colors.gradientGreen}
 					startPos={[0, 1]}
 					endPos={[1, 0]}
 					text="LOG IN"
-					textStyle={{color: Colors.white}}
+					textStyle={{ color: Colors.white }}
 					onPress={() => this.onSignIn()}
 				/>
-				<TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
-					<Text style={{textAlign: 'center'}}>Register</Text>
+				<TouchableOpacity
+					onPress={() => this.props.navigation.navigate('SignUp')}
+				>
+					<Text style={{ textAlign: 'center' }}>Register</Text>
 				</TouchableOpacity>
 			</KeyboardAvoidingView>
 		);
@@ -78,7 +74,7 @@ const styles = StyleSheet.create({
 		height: 150,
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginBottom: 16,
+		marginBottom: 16
 	},
 	container: {
 		flex: 1,
@@ -86,6 +82,6 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		flexDirection: 'column',
 		margin: 16,
-		backgroundColor: Colors.white,
-	},
+		backgroundColor: Colors.white
+	}
 });
