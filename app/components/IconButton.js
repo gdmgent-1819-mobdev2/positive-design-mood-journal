@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { TouchableOpacity, StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+
 import Colors from '../modules/Colors'
 
 export default class IconButton extends Component {

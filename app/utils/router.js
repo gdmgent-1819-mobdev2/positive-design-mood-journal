@@ -37,6 +37,21 @@ const AuthStack = createStackNavigator(
 			navigationOptions: {
 				header: null
 			}
+		}
+	},
+	{
+		initialRouteName: 'SignIn',
+		headerLayoutPreset: 'center'
+	}
+);
+
+const HomeStack = createStackNavigator(
+	{
+		Home: {
+			screen: Home,
+			navigationOptions: {
+				header: null
+			}
 		},
 		AddEntry: {
 			screen: JournalNoteEntry,
@@ -50,18 +65,14 @@ const AuthStack = createStackNavigator(
 			navigationOptions: {
 				header: null
 			}
-		}
+		},
 	},
-	{
-		initialRouteName: 'SignIn',
-		headerLayoutPreset: 'center'
-	}
 );
 
 const AppStack = createBottomTabNavigator(
 	{
 		Home: {
-			screen: Home,
+			screen: HomeStack,
 			navigationOptions: {
 				tabBarLabel: 'Home',
 				tabBarIcon: ({ tintColor }) => (
@@ -134,18 +145,18 @@ const AppStack = createBottomTabNavigator(
 			labelStyle: {
 				fontSize: 12
 			}
-		}
+		},
+		initialRouteName: 'Home'
 	}
 );
 
 const AppContainer = createAppContainer(
 	createSwitchNavigator({
-		AuthLoading: AuthLoadingScreen,
+		Auth: AuthStack,
 		App: AppStack,
-		Auth: AuthStack
 	}),
 	{
-		initialRouteName: 'AuthLoading'
+		initialRouteName: 'Auth'
 	}
 );
 

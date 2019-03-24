@@ -1,6 +1,3 @@
-// journal entry second screen
-//  write a note for your journal entry
-//  add image button
 import React, { Component } from 'react';
 import {
 	KeyboardAvoidingView,
@@ -10,14 +7,16 @@ import {
 	TouchableHighlight,
 	View
 } from 'react-native';
-import IconButton from '../components/IconButton';
-import Text from '../components/FiraText';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { LinearGradient } from 'expo';
+import firebase from 'firebase';
+
 import Colors from '../modules/Colors';
 import Moods from '../modules/Moods';
 
-import firebase from 'firebase';
+import IconButton from '../components/IconButton';
+import Text from '../components/FiraText';
+
 
 export default class JournalNoteEntry extends Component {
 	constructor(props) {
@@ -53,8 +52,6 @@ export default class JournalNoteEntry extends Component {
 		}
 	}
 
-
-	/* TODO: Add mood to note data, so we can determine which type / color card it is */
 	async addNewNote(note) {
 		if (note.title === '' || note.text === '') {
 			alert('Make sure the inputs are not empty');
@@ -95,7 +92,6 @@ export default class JournalNoteEntry extends Component {
 					multiline={true}
 					onChangeText={text => this.setState({ text })}
 				/>
-				{/* FIX ME: Offset buttons so checkmark is centered */}
 				<View style={styles.buttonContainer}>
 					<IconButton 
 						icon={'md-camera'}
@@ -119,7 +115,6 @@ const styles = StyleSheet.create({
 	title: {
 		height: 60,
 		paddingHorizontal: 32,
-		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light',
 		fontSize: 28,
 		fontWeight: 'bold',
@@ -130,7 +125,6 @@ const styles = StyleSheet.create({
 		padding: 32,
 		textAlignVertical: 'top',
 		fontSize: 15,
-		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
 	},
 	container: {

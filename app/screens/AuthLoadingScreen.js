@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import firebase from 'firebase';
 import {
 	ActivityIndicator,
-	AsyncStorage,
 	StatusBar,
-	StyleSheet,
 	View
 } from 'react-native';
-import Text from '../components/FiraText';
+import firebase from 'firebase';
 
 export class AuthLoadingScreen extends Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			isLoggedIn: false,
+		}
 		if (this.checkUserAuthentication()) {
 			this.props.navigation.navigate('App');
 		}
 	}
 	checkUserAuthentication = async () => {
-		//TODO: check for user authentication here
+		firebase.auth().onAuthStateChanged(user => {
+			if (user) this.setState({ isLoggedIn: true, })
+		})
 	};
 	render() {
 		return (

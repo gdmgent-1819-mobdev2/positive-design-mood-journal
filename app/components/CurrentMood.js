@@ -16,6 +16,10 @@ export default class CurrentMood extends Component {
 		this.retrieveMoodRating();
 	}
 
+	componentDidUpdate() {
+		this.retrieveMoodRating();
+	}
+
 	async retrieveMoodRating() {
 		try {
 			const rating = await AsyncStorage.getItem('mood');
@@ -49,7 +53,6 @@ export default class CurrentMood extends Component {
 				<Text weight="bold" style={styles.subTitle}>
 					Current Mood
 				</Text>
-				{/* TODO: add animated svg */}
 				<Image style={styles.currentMoodImage} source={Moods[rating].image} />
 				<View style={styles.moodTitle}>
 					<Text weight="bold" style={styles.title}>

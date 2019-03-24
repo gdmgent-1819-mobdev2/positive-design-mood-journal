@@ -2,30 +2,65 @@ import React, { Component } from 'react';
 import {
 	ScrollView,
 	View,
-	Button,
-	Image,
 	StyleSheet,
 	TouchableOpacity
 } from 'react-native';
-import Text from '../components/FiraText';
-import Colors from '../modules/Colors';
+import firebase from 'firebase';
 
+import Text from '../components/FiraText';
 import CurrentMood from '../components/CurrentMood';
 import MoodCard from '../components/MoodCard';
 
-import firebase from 'firebase';
 
 export default class Home extends Component {
 	state = {
-		posts: [],
+		isLoading: true,
+		notes: [],
 		uid: null
 	};
 
 	componentDidMount() {
 		firebase.auth().onAuthStateChanged(user => {
-			if (user) this.setState({ uid: user.uid });
+			if (user) {
+				this.setState({ 
+					uid: user.uid 
+				})
+
+				this.getUserNotes();
+			};
 		});
 	}
+
+	async getUserNotes() {
+		try {
+			const ref = await firebase.database().ref('notes/' + this.state.uid);
+			ref.once('value').then((snapshot) => {
+				this.setState({ 
+					isLoading: false,
+					notes: snapshot.val()
+				})
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	}
+	
+	renderNotes() {
+		const { notes } = this.state;
+		const keys = [];
+		const cards = [];
+
+		Object.keys(notes).map(key => keys.push(key));
+
+		Object.values(notes).map((note, index) => {
+			cards.push(
+				<MoodCard key={keys[index]} title={note.title} body={note.text} mood={note.mood}/>
+			);
+		})
+
+		return cards;
+	}
+
 	render() {
 		return (
 			<View style={styles.container}>
@@ -44,31 +79,11 @@ export default class Home extends Component {
 						</TouchableOpacity>
 					</View>
 					<ScrollView>
-						<MoodCard
-							title={'Op Reis'}
-							body={'Leuke dingen gedaan vandaag'}
-							mood={1}
-						/>
-						<MoodCard
-							title={'Op Reis'}
-							body={'Leuke dingen gedaan vandaag'}
-							mood={2}
-						/>
-						<MoodCard
-							title={'Op Reis'}
-							body={'Leuke dingen gedaan vandaag'}
-							mood={7}
-						/>
-						<MoodCard
-							title={'Op Reis'}
-							body={'Leuke dingen gedaan vandaag'}
-							mood={6}
-						/>
-						<MoodCard
-							title={'Op Reis'}
-							body={'Leuke dingen gedaan vandaag'}
-							mood={8}
-						/>
+							{this.state.notes !== null ? (
+								this.renderNotes()
+							) : (
+								<Text>No notes found. Make some new notes first!</Text>
+							)}
 					</ScrollView>
 				</View>
 			</View>

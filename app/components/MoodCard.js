@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
-import Text from './FiraText';
+import { StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { LinearGradient } from 'expo';
+
 import Colors from '../modules/Colors';
 import Moods from '../modules/Moods';
+
+import Text from './FiraText';
 
 export default class MoodCard extends Component {
 	render() {

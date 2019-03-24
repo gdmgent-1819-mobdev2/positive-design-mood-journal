@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 import Colors from '../modules/Colors';
 
 class FormInput extends Component {
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
 		margin: 10,
 		borderRadius: 75,
 		backgroundColor: Colors.lightGray,
-		// FIXME: check if possible to set default font family globally?
 		fontFamily: 'fira-sans-light'
 	}
 });

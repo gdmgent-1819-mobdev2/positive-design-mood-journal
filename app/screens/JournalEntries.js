@@ -1,14 +1,10 @@
-// view your journal entries
-//  searchbar
-//  latest entries
-import { View, StyleSheet, ScrollView } from 'react-native';
-
 import React, { Component } from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
 
 import SearchInput from '../components/SearchInput';
 import Text from '../components/FiraText';
 import MoodCard from '../components/MoodCard';
-import Colors from '../modules/Colors';
+
 
 import firebase from 'firebase';
 
@@ -50,7 +46,6 @@ export class JournalEntries extends Component {
 		}
 	}
 	
-	/* Scuffed */
 	renderNotes() {
 		const { notes } = this.state;
 		const keys = [];
@@ -80,7 +75,11 @@ export class JournalEntries extends Component {
 					<ScrollView>
 						<View>
 							<Text weight='bold' style={styles.title}>Today</Text>
-							{this.renderNotes()}
+							{this.state.notes !== null ? (
+								this.renderNotes()
+							) : (
+								<Text>No notes found. Make some new notes first!</Text>
+							)}
 						</View>					
 					</ScrollView>
 				</View>

@@ -1,13 +1,12 @@
-// journal entry optional third screen
-//  add an image to your journal entry
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { Camera, Permissions } from 'expo';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
+import Colors from '../modules/Colors';
+
 import Text from '../components/FiraText';
 import IconButton from '../components/IconButton';
-import Colors from '../modules/Colors';
 
 export default class JournalImageEntry extends Component {
 	state = {
@@ -52,10 +51,6 @@ export default class JournalImageEntry extends Component {
 		this.setState({ type: toggleType });
 	}
 
-	// TODO: 
-	// take picture works BUT picture is stored in iOS/Android cache -> move image with Expo.FileSystem to permanently store on phone
-	// choose picture from gallery --> ask permissions for camera roll with Permissions.CAMERA_ROLL
-	// add shadow / background opacity behind icons to make them more clear
 	render() {
 		const { hasPermission } = this.state;
 		if (hasPermission === null) {

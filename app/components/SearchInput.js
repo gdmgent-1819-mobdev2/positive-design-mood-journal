@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
+
 import Colors from '../modules/Colors';
 
 export default class SearchInput extends Component {

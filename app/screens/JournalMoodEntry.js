@@ -1,13 +1,12 @@
-// journal entry first screen
-//  mood slider for selecting your current mood
-
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo';
+
+import Colors from '../modules/Colors';
 
 import MoodSlider from '../components/MoodSlider';
 import Text from '../components/FiraText';
-import Colors from '../modules/Colors';
+
 
 export class JournalMoodEntry extends Component {
 	render() {

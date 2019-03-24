@@ -5,8 +5,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import Colors from '../modules/Colors';
 import Moods from '../modules/Moods';
-import Text from '../components/FiraText';
 
+import Text from '../components/FiraText';
 import MoodSlider from '../components/MoodSlider';
 
 export default class NewJournalEntry extends Component {

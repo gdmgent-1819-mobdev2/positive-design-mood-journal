@@ -1,11 +1,9 @@
-// change settings for the app - notifications, location, emailadress, extra: password, toggle 2FA
 import React, { Component } from 'react';
-import { View, Picker, TextInput, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, Picker, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import firebase from 'firebase';
 
 import Text from '../components/FiraText';
 import Colors from '../modules/Colors';
-
-import firebase from 'firebase';
 
 class Settings extends Component {
 	state = {
@@ -25,7 +23,6 @@ class Settings extends Component {
 		})
 	}
 
-	/* TODO: Make cleaner */
 	async signOut() {
 		try {
 			await firebase.auth().signOut();
@@ -74,7 +71,6 @@ class Settings extends Component {
 
 export default Settings;
 
-/* TODO: Fix styling */
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

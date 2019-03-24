@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import {
 	KeyboardAvoidingView,
-	TextInput,
-	Button,
 	StyleSheet,
-	Picker,
 	TouchableOpacity,
 	View
 } from 'react-native';
+import firebase from 'firebase';
 
 import Colors from '../../modules/Colors';
+
 import Text from '../../components/FiraText';
 import FormInput from '../../components/FormInput';
 import GradientButton from '../../components/GradientButton';
 import Logo from '../../components/Logo';
-import firebase from 'firebase';
+
 
 class SignUp extends Component {
 	constructor(props) {
