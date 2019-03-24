@@ -8,7 +8,7 @@ import Moods from '../modules/Moods';
 
 export default class CurrentMood extends Component {
 	state = {
-		rating: 8,
+		rating: 0,
 		isLoading: true,
 	};
 
@@ -24,6 +24,8 @@ export default class CurrentMood extends Component {
 					rating,
 					isLoading: false,
 				 })
+			} else {
+				this.setState({ rating: 8 })
 			}
 		} catch (err) {
 			console.log(err);

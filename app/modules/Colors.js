@@ -11,7 +11,7 @@ const Colors = {
 	gradientDarkBlue: ['#0060BF', '#3499FE'],
 	gradientBlue: ['#0099BF', '#43D2E8'],
 	gradientRed: ['#FA3A35', '#FA6D35'],
-	gradientLightGreen: ['#38A81D', '#B0D972'],
+	gradientLightGreen: ['#7BDC5F', '#92F276'],
 	gradientGreen: ['#23E3AD', '#22E37F'],
 	gradientOrange: ['#FFA21F', '#FFCB1F'],
 	gradientPink: ['#D955D5', '#FEB1E4'],
