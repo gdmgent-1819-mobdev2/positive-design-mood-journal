@@ -8,20 +8,20 @@ import AppContainer from './utils/router';
 export default class App extends React.Component {
 	state = {
 		appLoaded: false,
-		isLoggedIn: false,
+		isLoggedIn: false
 	};
 
 	constructor() {
 		super();
 		initFirebase();
 	}
-	
+
 	componentWillMount() {
 		firebase.auth().onAuthStateChanged(user => {
 			if (user) {
-				this.setState({ isLoggedIn: true })
+				this.setState({ isLoggedIn: true });
 			}
-		})
+		});
 	}
 
 	async componentDidMount() {

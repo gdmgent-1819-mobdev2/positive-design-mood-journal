@@ -26,16 +26,6 @@ export default class Home extends Component {
 			if (user) this.setState({ uid: user.uid });
 		});
 	}
-
-	getUserNotes() {
-		firebase
-			.database()
-			.ref('notes')
-			.on('value', snapshot => {
-				console.log(snapshot);
-			});
-	}
-
 	render() {
 		return (
 			<View style={styles.container}>

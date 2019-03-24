@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import {
 	ActivityIndicator,
 	AsyncStorage,
@@ -16,7 +17,7 @@ export class AuthLoadingScreen extends Component {
 		}
 	}
 	checkUserAuthentication = async () => {
-		return true;
+		//TODO: check for user authentication here
 	};
 	render() {
 		return (
