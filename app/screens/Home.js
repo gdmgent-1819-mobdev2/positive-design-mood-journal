@@ -31,6 +31,10 @@ export default class Home extends Component {
 		});
 	}
 
+	componentDidUpdate() {
+		this.getUserNotes();
+	}
+
 	async getUserNotes() {
 		try {
 			const ref = await firebase.database().ref('notes/' + this.state.uid);
