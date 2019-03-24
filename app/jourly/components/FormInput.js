@@ -28,7 +28,6 @@ class FormInput extends Component {
 		return (
 			<TextInput
 				style={styles.textInput}
-				selectionColor={Colors.gradientGreen}
 				onFocus={this.handleFocus}
 				onBlur={this.handleBlur}
 				{...otherProps}

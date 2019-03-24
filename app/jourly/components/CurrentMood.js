@@ -8,7 +8,7 @@ import Moods from '../modules/Moods';
 
 export default class CurrentMood extends Component {
 	state = {
-		rating: 1
+		rating: 0
 	};
 	getMood(rating) {
 		return moods[rating];

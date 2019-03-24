@@ -19,7 +19,7 @@ import SignUp from '../screens/auth/SignUp';
 import Home from '../screens/Home';
 import JournalEntries from '../screens/JournalEntries';
 import NewJournalEntry from '../screens/NewJournalEntry';
-import JounralImageEntry from '../screens/JournalImageEntry';
+import JournalImageEntry from '../screens/JournalImageEntry';
 import JournalNoteEntry from '../screens/JournalNoteEntry';
 import JournalTimeline from '../screens/JournalTimeline';
 import Settings from '../screens/Settings';
@@ -41,11 +41,12 @@ const AuthStack = createStackNavigator(
 		AddEntry: {
 			screen: JournalNoteEntry,
 			navigationOptions: {
-				title: 'New Entry'
+				title: 'New Entry',
+				header: null,
 			}
 		},
 		CameraEntry: {
-			screen: JounralImageEntry,
+			screen: JournalImageEntry,
 			navigationOptions: {
 				header: null,
 			}
